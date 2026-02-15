@@ -1,0 +1,23 @@
+## H2 DB 활용 및 개발 초기 환경 설정
+
+# 서버 포트 번호 변경
+server:
+  port: 80
+
+spring:
+  # SQL로깅을 위한 log4jdbc 드라이버 적용
+  datasource:
+    url: jdbc:log4jdbc:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    username: sa
+  # SQL 초기 데이터 설정
+  sql:
+    init:
+      mode: EMBEDDED
+      schema-locations: classpath:h2/schema.sql
+      data-locations: classpath:h2/data.sql
+  # H2 콘솔 접속 정보 설정
+  h2:
+    console:
+      path: /h2-console
+      enabled: true

@@ -1,0 +1,46 @@
+## 프로젝트 전역 공통 설정 관리 및 실행할 프로파일 지정
+
+# 서버 설정
+server:
+  servlet:
+    # HTTP 요청 및 응답 인코딩 'UTF-8' 강제 적용
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+# 스프링 전역 설정
+spring:
+  application:
+    name: wiple-app
+  config:
+    # 환경 변수 파일 로드
+    import: optional:file:.env[.properties]
+  profiles:
+    # 활성화할 프로파일
+    active: dev
+  main:
+    # 스프링부트 배너 비활성화
+    banner-mode: off
+  # 웹 브라우저의 새로고침 후 화면의 변경 이력 반영을 위한 템플릿 파일 경로와 캐시값 설정
+  thymeleaf:
+    prefix: file:src/main/resources/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    # 개발 완료시 'true' 변경
+    cache: false
+  # 웹 브라우저의 새로고침 후 화면의 변경 이력 반영을 위한 정적 리소스 파일 경로 설정
+  web:
+    resources:
+      static-locations: file:src/main/resources/static/
+
+# 마이바티스 설정
+mybatis:
+  # 마이바티스 설정 파일 경로 지정
+  config-location: classpath:mybatis/mybatis-config.xml
+  type-aliases-package: com.suviny.wiple.domain.**.dto
+  # 사용자 정의 타입 핸들러 클래스의 패키지 지정
+  type-handlers-package: com.suviny.wiple.global.common.type
+  # 매퍼 XML 파일 경로 지정
+  mapper-locations: classpath:mybatis/mappers/*_mapper.xml
