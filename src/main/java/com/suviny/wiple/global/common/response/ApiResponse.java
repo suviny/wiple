@@ -24,7 +24,7 @@ public class ApiResponse<T> extends AbstractResponse {
      * 성공 응답 객체를 생성하여 반환한다.
      *
      * @param data  요청 처리 후 그 결과에 대한 데이터
-     * @return      응답 객체
+     * @return      {@link ApiResponse} 객체
      * @param <T>   결과 데이터 타입
      */
     public static <T> ApiResponse<T> success(T data) {
