@@ -11,7 +11,7 @@
     01_웹 폰트
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ==================================================
-    # 서브 섹션
+    # 본문 서체
  ================================================== */
 @font-face {
     font-family: 'Pretendard';
@@ -35,7 +35,7 @@
 
 
 /* ==================================================
-    # 서브 섹션
+    # 헤딩 서체
  ================================================== */
 @font-face {
     font-family: 'Paperlogy';
@@ -55,28 +55,157 @@
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 :root {
     /* ==================================================
-        # 서브 섹션
+        # 색상
+     ================================================== */
+    /* -----------------------------------
+        기본 색상
+     ----------------------------------- */
+    --palette-red-300: #FAA7A7;
+    --palette-red-400: #F57474;
+    --palette-red-500: #EC4747;
+    --palette-red-600: #D92929;
+
+    --palette-orange-300: #FEB0A3;
+    --palette-orange-400: #FB836E;
+    --palette-orange-500: #F25B41;
+    --palette-orange-600: #E03E22;
+
+    --palette-amber-300: #FEC44B;
+    --palette-amber-400: #FDAC22;
+    --palette-amber-500: #F78909;
+    --palette-amber-600: #DB6404;
+
+    --palette-yellow-400: #FFF40D;
+    --palette-yellow-500: #FEE500;
+    --palette-yellow-600: #D1AA00;
+
+    --palette-green-300: #74E1B2;
+    --palette-green-400: #3CCB92;
+    --palette-green-500: #19B079;
+    --palette-green-600: #0C8F62;
+
+    --palette-blue-300: #8ECAFF;
+    --palette-blue-400: #59ACFF;
+    --palette-blue-500: #2984FE;
+    --palette-blue-600: #1C6AF4;
+
+    --palette-royal-blue-300: #9FBFFF;
+    --palette-royal-blue-400: #799BFF;
+    --palette-royal-blue-500: #5A76FA;
+    --palette-royal-blue-600: #3C4EEF;
+
+    /* 회색조 */
+    --palette-concrete-50: #FAFAFA;
+    --palette-concrete-100: #F2F2F2;
+    --palette-concrete-200: #E6E6E6;
+    --palette-concrete-900: #1A1A1A;
+
+    --palette-gray-50: #F9FAFB;
+    --palette-gray-100: #EEEFF1;
+    --palette-gray-200: #E6E7EA;
+    --palette-gray-300: #D3D5D9;
+    --palette-gray-400: #9FA4AC;
+    --palette-gray-500: #8B90A0;
+    --palette-gray-600: #787D8A;
+    --palette-gray-700: #626671;
+    --palette-gray-800: #52555D;
+    --palette-gray-900: #4F565F;
+    --palette-gray-950: #303236;
+
+    --palette-white: #FFFFFF;
+    --palette-black: #202123;
+
+
+    /* -----------------------------------
+        시맨틱 색상
+     ----------------------------------- */
+    --color-primary: var(--palette-royal-blue-500);
+    --color-secondary: var(--palette-orange-500);
+
+    --color-success: var(--palette-green-400);
+    --color-warning: var(--palette-amber-400);
+    --color-danger: var(--palette-red-400);
+
+    --color-link: var(--palette-blue-500);
+    --color-link-hover: var(--palette-blue-600);
+
+    --color-border: var(--palette-gray-300);
+    --color-border-hover: var(--palette-gray-800);
+    --color-border-focus: var(--color-primary);
+    --color-border-disabled: var(--palette-gray-200);
+
+    --color-background: var(--palette-gray-50);
+    --color-background-content: var(--palette-white);
+    --color-background-disabled: var(--palette-gray-200);
+
+    --color-text: var(--palette-gray-800);
+    --color-text-on-color: var(--palette-white);
+    --color-text-strong: var(--palette-gray-950);
+    --color-text-muted: var(--palette-gray-600);
+    --color-text-placeholder: var(--palette-gray-500);
+    --color-text-disabled: var(--palette-gray-400);
+
+    --color-icon: var(--palette-gray-500);
+    --color-icon-on-color: var(--palette-white);
+
+
+
+    /* ==================================================
+        # 타이포그래피
+     ================================================== */
+    /* -----------------------------------
+        글꼴
+     ----------------------------------- */
+    --font-family-fallback: system-ui, -apple-system, sans-serif;
+
+    --font-family-heading: 'Paperlogy', 'Pretendard', var(--font-family-fallback);
+    --font-family-body: 'Pretendard', var(--font-family-fallback);
+    --font-family-icon: 'fontello';
+
+
+    /* -----------------------------------
+        텍스트 굵기
+     ----------------------------------- */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 600;
+    --font-weight-heavy: 800;
+
+
+    /* -----------------------------------
+        텍스트 크기
+     ----------------------------------- */
+    --text-sm: 12px;
+    --text-md: 13px;
+    --text-lg: 18px;
+    --text-xl: 24px;
+
+
+    /* -----------------------------------
+        텍스트 간격
+     ----------------------------------- */
+    /* 자간 */
+    --letter-spacing-none: 0;
+    --letter-spacing-heading: -0.05em;
+    --letter-spacing-body: -0.02em;
+    --letter-spacing-caption: 0.02em;
+
+    /* 행간 */
+    --line-height-ui: 1;
+    --line-height-heading: 1.3;
+    --line-height-body: 1.7;
+
+
+
+    /* ==================================================
+        # 아이콘
      ================================================== */
     --variable: value;
 
 
 
     /* ==================================================
-        # 서브 섹션
-     ================================================== */
-    --variable: value;
-
-
-
-    /* ==================================================
-        # 서브 섹션
-     ================================================== */
-    --variable: value;
-
-
-
-    /* ==================================================
-        # 서브 섹션
+        # 간격
      ================================================== */
     --variable: value;
 
