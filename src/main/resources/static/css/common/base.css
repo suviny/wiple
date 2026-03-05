@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+/*!
+ * enter the description about this file...
+ */
+ 
+ 
+ 
+ 
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    01_웹 폰트
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ==================================================
+    # 서브 섹션
+ ================================================== */
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: local('Pretendard-Medium'),
+    url(/fonts/Pretendard-Medium.woff2) format('woff2'),
+    url(/fonts/Pretendard-Medium.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local('Pretendard-SemiBold'),
+    url(/fonts/Pretendard-SemiBold.woff2) format('woff2'),
+    url(/fonts/Pretendard-SemiBold.woff) format('woff');
+}
+
+
+/* ==================================================
+    # 서브 섹션
+ ================================================== */
+@font-face {
+    font-family: 'Paperlogy';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: local('Paperlogy-8ExtraBold'),
+    url(/fonts/Paperlogy-8ExtraBold.woff2) format('woff2'),
+    url(fonts/Paperlogy-8ExtraBold.woff) format('woff');
+}
+
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    02_사용자 지정 CSS 속성
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+:root {
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+
+
+
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+
+
+
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+
+
+
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+
+
+
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+
+
+
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+
+
+
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+
+
+
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+
+
+
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+
+
+
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+
+
+
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+
+
+
+    /* ==================================================
+        # 서브 섹션
+     ================================================== */
+    --variable: value;
+}
+
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    03_초기화
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
+address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, article, aside, embed, output,
+table, tbody, tfoot, thead, tr, th, td, details, canvas, figure, figcaption, footer, header, hgroup, menu, nav,
+ruby, section, summary, time, mark, audio, video {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+details, figcaption, figure, hgroup, menu, img, header, footer, section, nav, article, aside,
+p, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, span, code, em, strong, table, th, td,
+form, fieldset, legend, label, input, textarea, select, button {
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+q::before,
+q::after,
+blockquote::before,
+blockquote::after {
+    content: none;
+    content: '';
+}
+
+img,
+fieldset {
+    border: 0;
+    background: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+legend {
+    overflow: hidden;
+    position: absolute;
+    left: -9999px;
+    font-size: 0;
+}
+
+i {
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+
