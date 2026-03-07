@@ -8,9 +8,541 @@
  
  
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    99_섹션
+    01_요소 상태 제어
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+[hidden] {
+}
+
+[disabeld] {
+}
+
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    02_디스플레이
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.is-hidden {
+    display: none !important;
+}
+
+.is-inline {
+    display: inline !important;
+}
+
+.is-block {
+    display: block !important;
+}
+
+.is-inline-block {
+    display: inline-block !important;
+}
+
+.is-flex {
+    display: flex !important;
+}
+
+.is-inline-flex {
+    display: inline-flex !important;
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    99_플렉스
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ==================================================
-    # 서브 섹션
- ================================================== */ 
-element {}
+    # 수직 정렬
+ ================================================== */
+.is-flex-col {
+    flex-direction: column !important;
+}
+
+.is-align-items-start {
+    align-items: flex-start !important;
+}
+
+.is-align-items-center {
+    align-items: center !important;
+}
+
+.is-align-items-end {
+    align-items: flex-end !important;
+}
+
+
+/* ==================================================
+    # 수평 정렬
+ ================================================== */
+.is-flex-row {
+    flex-direction: row !important;
+}
+
+.is-justify-content-start {
+    justify-content: flex-start !important;
+}
+
+.is-justify-content-center {
+    justify-content: center !important;
+}
+
+.is-justify-content-end {
+    justify-content: flex-end !important;
+}
+
+.is-justify-content-space-around {
+    justify-content: space-around !important;
+}
+
+.is-justify-content-space-between {
+    justify-content: space-between !important;
+}
+
+
+/* ==================================================
+    # 정중앙 정렬
+ ================================================== */
+.is-flex-centered {
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    99_간격
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ==================================================
+    # 마진
+ ================================================== */
+.is-margin-all-none {
+    margin: var(--spacing-none) !important;
+}
+.is-margin-all-xs {
+    margin: var(--spacing-xs) !important;
+}
+.is-margin-all-sm {
+    margin: var(--spacing-sm) !important;
+}
+.is-margin-all-md {
+    margin: var(--spacing-md) !important;
+}
+.is-margin-all-lg {
+    margin: var(--spacing-lg) !important;
+}
+.is-margin-all-xl {
+    margin: var(--spacing-xl) !important;
+}
+
+.is-margin-x-xs {
+    margin: var(--spacing-none) var(--spacing-xs) !important;
+}
+.is-margin-x-sm {
+    margin: var(--spacing-none) var(--spacing-sm) !important;
+}
+.is-margin-x-md {
+    margin: var(--spacing-none) var(--spacing-md) !important;
+}
+.is-margin-x-lg {
+    margin: var(--spacing-none) var(--spacing-lg) !important;
+}
+.is-margin-x-xl {
+    margin: var(--spacing-none) var(--spacing-xl) !important;
+}
+
+.is-margin-y-xs {
+    margin: var(--spacing-xs) var(--spacing-none) !important;
+}
+.is-margin-y-sm {
+    margin: var(--spacing-sm) var(--spacing-none) !important;
+}
+.is-margin-y-md {
+    margin: var(--spacing-md) var(--spacing-none) !important;
+}
+.is-margin-y-lg {
+    margin: var(--spacing-lg) var(--spacing-none) !important;
+}
+.is-margin-y-xl {
+    margin: var(--spacing-xl) var(--spacing-none) !important;
+}
+
+.is-margin-top-none {
+    margin-top: var(--spacing-none) !important;
+}
+.is-margin-top-xs {
+    margin-top: var(--spacing-xs) !important;
+}
+.is-margin-top-sm {
+    margin-top: var(--spacing-sm) !important;
+}
+.is-margin-top-md {
+    margin-top: var(--spacing-md) !important;
+}
+.is-margin-top-lg {
+    margin-top: var(--spacing-lg) !important;
+}
+.is-margin-top-xl {
+    margin-top: var(--spacing-xl) !important;
+}
+
+.is-margin-right-none {
+    margin-right: var(--spacing-none) !important;
+}
+.is-margin-right-xs {
+    margin-right: var(--spacing-xs) !important;
+}
+.is-margin-right-sm {
+    margin-right: var(--spacing-sm) !important;
+}
+.is-margin-right-md {
+    margin-right: var(--spacing-md) !important;
+}
+.is-margin-right-lg {
+    margin-right: var(--spacing-lg) !important;
+}
+.is-margin-right-xl {
+    margin-right: var(--spacing-xl) !important;
+}
+
+.is-margin-bottom-none {
+    margin-bottom: var(--spacing-none) !important;
+}
+.is-margin-bottom-xs {
+    margin-bottom: var(--spacing-xs) !important;
+}
+.is-margin-bottom-sm {
+    margin-bottom: var(--spacing-sm) !important;
+}
+.is-margin-bottom-md {
+    margin-bottom: var(--spacing-md) !important;
+}
+.is-margin-bottom-lg {
+    margin-bottom: var(--spacing-lg) !important;
+}
+.is-margin-bottom-xl {
+    margin-bottom: var(--spacing-xl) !important;
+}
+
+.is-margin-left-none {
+    margin-left: var(--spacing-none) !important;
+}
+.is-margin-left-xs {
+    margin-left: var(--spacing-xs) !important;
+}
+.is-margin-left-sm {
+    margin-left: var(--spacing-sm) !important;
+}
+.is-margin-left-md {
+    margin-left: var(--spacing-md) !important;
+}
+.is-margin-left-lg {
+    margin-left: var(--spacing-lg) !important;
+}
+.is-margin-left-xl {
+    margin-left: var(--spacing-xl) !important;
+}
+
+
+
+/* ==================================================
+    # 패딩
+ ================================================== */
+.is-padding-all-none {
+    padding: var(--spacing-none) !important;
+}
+.is-padding-all-xs {
+    padding: var(--spacing-xs) !important;
+}
+.is-padding-all-sm {
+    padding: var(--spacing-sm) !important;
+}
+.is-padding-all-md {
+    padding: var(--spacing-md) !important;
+}
+.is-padding-all-lg {
+    padding: var(--spacing-lg) !important;
+}
+.is-padding-all-xl {
+    padding: var(--spacing-xl) !important;
+}
+
+.is-padding-x-xs {
+    padding: var(--spacing-none) var(--spacing-xs) !important;
+}
+.is-padding-x-sm {
+    padding: var(--spacing-none) var(--spacing-sm) !important;
+}
+.is-padding-x-md {
+    padding: var(--spacing-none) var(--spacing-md) !important;
+}
+.is-padding-x-lg {
+    padding: var(--spacing-none) var(--spacing-lg) !important;
+}
+.is-padding-x-xl {
+    padding: var(--spacing-none) var(--spacing-xl) !important;
+}
+
+.is-padding-y-xs {
+    padding: var(--spacing-xs) var(--spacing-none) !important;
+}
+.is-padding-y-sm {
+    padding: var(--spacing-sm) var(--spacing-none) !important;
+}
+.is-padding-y-md {
+    padding: var(--spacing-md) var(--spacing-none) !important;
+}
+.is-padding-y-lg {
+    padding: var(--spacing-lg) var(--spacing-none) !important;
+}
+.is-padding-y-xl {
+    padding: var(--spacing-xl) var(--spacing-none) !important;
+}
+
+.is-padding-top-none {
+    padding-top: var(--spacing-none) !important;
+}
+.is-padding-top-xs {
+    padding-top: var(--spacing-xs) !important;
+}
+.is-padding-top-sm {
+    padding-top: var(--spacing-sm) !important;
+}
+.is-padding-top-md {
+    padding-top: var(--spacing-md) !important;
+}
+.is-padding-top-lg {
+    padding-top: var(--spacing-lg) !important;
+}
+.is-padding-top-xl {
+    padding-top: var(--spacing-xl) !important;
+}
+
+.is-padding-right-none {
+    padding-right: var(--spacing-none) !important;
+}
+.is-padding-right-xs {
+    padding-right: var(--spacing-xs) !important;
+}
+.is-padding-right-sm {
+    padding-right: var(--spacing-sm) !important;
+}
+.is-padding-right-md {
+    padding-right: var(--spacing-md) !important;
+}
+.is-padding-right-lg {
+    padding-right: var(--spacing-lg) !important;
+}
+.is-padding-right-xl {
+    padding-right: var(--spacing-xl) !important;
+}
+
+.is-padding-bottom-none {
+    padding-bottom: var(--spacing-none) !important;
+}
+.is-padding-bottom-xs {
+    padding-bottom: var(--spacing-xs) !important;
+}
+.is-padding-bottom-sm {
+    padding-bottom: var(--spacing-sm) !important;
+}
+.is-padding-bottom-md {
+    padding-bottom: var(--spacing-md) !important;
+}
+.is-padding-bottom-lg {
+    padding-bottom: var(--spacing-lg) !important;
+}
+.is-padding-bottom-xl {
+    padding-bottom: var(--spacing-xl) !important;
+}
+
+.is-padding-left-none {
+    padding-left: var(--spacing-none) !important;
+}
+.is-padding-left-xs {
+    padding-left: var(--spacing-xs) !important;
+}
+.is-padding-left-sm {
+    padding-left: var(--spacing-sm) !important;
+}
+.is-padding-left-md {
+    padding-left: var(--spacing-md) !important;
+}
+.is-padding-left-lg {
+    padding-left: var(--spacing-lg) !important;
+}
+.is-padding-left-xl {
+    padding-left: var(--spacing-xl) !important;
+}
+
+
+
+/* ==================================================
+    # 갭
+ ================================================== */
+.is-gap-all-none {
+    gap: var(--spacing-none);
+}
+.is-gap-all-xs {
+    gap: var(--spacing-xs);
+}
+.is-gap-all-sm {
+    gap: var(--spacing-sm);
+}
+.is-gap-all-md {
+    gap: var(--spacing-md);
+}
+.is-gap-all-lg {
+    gap: var(--spacing-lg);
+}
+.is-gap-all-xl {
+    gap: var(--spacing-xl);
+}
+
+.is-gap-x-xs {
+    gap: var(--spacing-none) var(--spacing-xs) !important;
+}
+.is-gap-x-sm {
+    gap: var(--spacing-none) var(--spacing-sm) !important;
+}
+.is-gap-x-md {
+    gap: var(--spacing-none) var(--spacing-md) !important;
+}
+.is-gap-x-lg {
+    gap: var(--spacing-none) var(--spacing-lg) !important;
+}
+.is-gap-x-xl {
+    gap: var(--spacing-none) var(--spacing-xl) !important;
+}
+
+.is-gap-y-xs {
+    gap: var(--spacing-xs) var(--spacing-none) !important;
+}
+.is-gap-y-sm {
+    gap: var(--spacing-sm) var(--spacing-none) !important;
+}
+.is-gap-y-md {
+    gap: var(--spacing-md) var(--spacing-none) !important;
+}
+.is-gap-y-lg {
+    gap: var(--spacing-lg) var(--spacing-none) !important;
+}
+.is-gap-y-xl {
+    gap: var(--spacing-xl) var(--spacing-none) !important;
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    99_타이포그래피
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ==================================================
+    # 텍스트 크기
+ ================================================== */
+.is-text-sm {
+    font-size: var(--text-sm);
+}
+
+.is-text-md {
+    font-size: var(--text-md);
+}
+
+.is-text-lg {
+    font-size: var(--text-lg);
+}
+
+.is-text-xl {
+    font-size: var(--text-xl);
+}
+
+
+/* ==================================================
+    # 정렬
+ ================================================== */
+.has-text-right {
+    text-align: right !important;
+}
+
+.has-text-centered {
+    text-align: center !important;
+}
+
+.has-text-left {
+    text-align: left !important;
+}
+
+.has-text-justified {
+    text-align: justify !important;
+}
+
+
+
+/* ==================================================
+    # 변환
+ ================================================== */
+.is-underlined-hover:hover {
+    color: var(--color-link-hover) !important;
+    text-decoration: underline !important;
+    transition: var(--transition-duration-fast) !important;
+}
+
+.is-truncated {
+    display: block !important;
+    overflow: hidden !important;
+    max-width: 100% !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    99_이미지
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ==================================================
+    # 채우기
+ ================================================== */
+.is-fit-cover {
+    object-fit: cover !important;
+}
+
+.is-fit-contain {
+    object-fit: contain !important;
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    99_테두리
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.is-border-none {
+    border: var(--border-width-none) !important;
+}
+
+
+/* ==================================================
+    # 모서리
+ ================================================== */
+.is-rounded-none {
+    border-radius: var(--border-radius-none) !important;
+}
+
+.is-rounded-sm {
+    border-radius: var(--border-radius-sm) !important;
+}
+
+.is-rounded-md {
+    border-radius: var(--border-radius-md) !important;
+}
+
+.is-rounded-lg {
+    border-radius: var(--border-radius-lg) !important;
+}
+
+/* 모서리 형태 */
+.is-rounded-pill {
+    border-radius: var(--border-radius-pill) !important;
+}
+
+.is-rounded-circle {
+    border-radius: var(--border-radius-circle) !important;
+}

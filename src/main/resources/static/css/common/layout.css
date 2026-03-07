@@ -8,9 +8,61 @@
  
  
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    99_섹션
+    01_전체
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 전역 */
+body {
+    background-color: var(--color-background);
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--text-md);
+    color: var(--color-text);
+    letter-spacing: var(--letter-spacing-body);
+}
+
+/* 최상위 영역 */
+#root {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(0.03deg);
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    02_중단 영역
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+#container {
+    display: flex;
+    flex: 1;
+}
+
+
 /* ==================================================
-    # 서브 섹션
- ================================================== */ 
-element {}
+    # 메인 컨텐츠
+ ================================================== */
+#content {
+    min-width: 0;
+    padding: var(--spacing-md);
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    03_하단 영역
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+#footer .copy {
+    font-size: var(--text-sm);
+}

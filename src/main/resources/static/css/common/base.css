@@ -200,70 +200,157 @@
     /* ==================================================
         # 아이콘
      ================================================== */
-    --variable: value;
+    /* -----------------------------------
+        아이콘 크기
+     ----------------------------------- */
+    /* 텍스트 대비 아이콘 크기 보정 값 */
+    --icon-size-offset: 2px;
+
+    --icon-sm: calc(var(--text-sm) + var(--icon-size-offset));          /* 14px */
+    --icon-md: calc(var(--text-md) + var(--icon-size-offset) + 1px);    /* 16px */
+    --icon-lg: calc(var(--text-lg) + var(--icon-size-offset));          /* 20px */
+    --icon-xl: calc(var(--text-xl) + var(--icon-size-offset));          /* 26px */
 
 
 
     /* ==================================================
         # 간격
      ================================================== */
-    --variable: value;
+    /* 간격의 기준 단위 */
+    --spacing-unit: 4px;
+
+    /* 간격 스케일 */
+    --spacing-xs: calc(var(--spacing-unit) * 1);    /* 4px */
+    --spacing-sm: calc(var(--spacing-unit) * 2);    /* 8px */
+    --spacing-md: calc(var(--spacing-unit) * 4);    /* 16px */
+    --spacing-lg: calc(var(--spacing-unit) * 6);    /* 24px */
+    --spacing-xl: calc(var(--spacing-unit) * 8);    /* 32px */
+    --spacing-none: calc(var(--spacing-unit) * 0);  /* 0px */
 
 
 
     /* ==================================================
-        # 서브 섹션
+        # 컨트롤 요소
      ================================================== */
-    --variable: value;
+    /* -----------------------------------
+        컨트롤 요소 크기
+     ----------------------------------- */
+    /* 너비 */
+    --control-element-width: 100%;
+    /* 높이 */
+    --control-element-height: 40px;
+    --control-element-height-min: calc(var(--control-element-height) * 4);
+    --control-element-height-max: calc(var(--control-element-height) * 8);
+
+
+    /* -----------------------------------
+        컨트롤 요소 내부 여백
+     ----------------------------------- */
+    --control-element-padding-unit: 2px;
+    --control-element-padding-x: calc(var(--spacing-md) - var(--control-element-padding-unit)); /* 14px */
+    --control-element-padding-y: calc(var(--spacing-sm) + var(--control-element-padding-unit)); /* 10px */
 
 
 
     /* ==================================================
-        # 서브 섹션
+        # 테두리
      ================================================== */
-    --variable: value;
+    /* 굵기 */
+    --border-width-normal: 1px;
+    --border-width-medium: 3px;
+    --border-width-bold: 5px;
+    --border-width-none: 0;
+
+
+    /* 모서리 */
+    --border-radius-sm: 2px;
+    --border-radius-md: 4px;
+    --border-radius-lg: 8px;
+    --border-radius-none: 0px;
+
+    /* 모서리 형태 */
+    --border-radius-pill: 9999px;
+    --border-radius-circle: 50%;
 
 
 
     /* ==================================================
-        # 서브 섹션
+        # 이미지 크기 및 비율
      ================================================== */
-    --variable: value;
+    /* -----------------------------------
+        이미지 크기
+     ----------------------------------- */
+    /* 크기별 단위 */
+    --img-size-avatar-unit: 12px;
+    --img-size-thumb-unit: 42px;
+    --img-size-card-unit: 72px;
+
+    --img-size-avatar-sm: calc(var(--img-size-avatar-unit) * 2);
+    --img-size-avatar-md: calc(var(--img-size-avatar-unit) * 4);
+    --img-size-avatar-lg: calc(var(--img-size-avatar-unit) * 6);
+
+    --img-size-thumbnail-sm: calc(var(--img-size-thumb-unit) * 2);
+    --img-size-thumbnail-md: calc(var(--img-size-thumb-unit) * 4);
+    --img-size-thumbnail-lg: calc(var(--img-size-thumb-unit) * 6);
+
+    --img-size-card-sm: calc(var(--img-size-card-unit) * 2);
+    --img-size-card-md: calc(var(--img-size-card-unit) * 4);
+    --img-size-card-lg: calc(var(--img-size-card-unit) * 6);
+
+
+    /* -----------------------------------
+        이미지 비율
+     ----------------------------------- */
+    --img-ratio-avatar: 1 / 1;
+    --img-ratio-thumbnail: 16 / 9;
+    --img-ratio-card: 4 / 3;
 
 
 
     /* ==================================================
-        # 서브 섹션
+        # 투명도
      ================================================== */
-    --variable: value;
+    --opacity-faint: 0.08;
+    --opacity-subtle: 0.12;
+    --opacity-weak: 0.3;
+    --opacity-strong: 0.7;
+    --opacity-heavy: 0.8;
 
 
 
     /* ==================================================
-        # 서브 섹션
+        # 그림자
      ================================================== */
-    --variable: value;
+    /* 그림자 색상 */
+    --box-shadow-rgb: 82, 85, 93;
+
+
+    /* -----------------------------------
+        그림자 크기
+     ----------------------------------- */
+    --box-shadow-sm: 0px 2px 2px 0px rgba(var(--box-shadow-rgb), var(--opacity-faint));
+    --box-shadow-md: 0px 4px 8px 0px rgba(var(--box-shadow-rgb), var(--opacity-subtle));
+    --box-shadow-lg: 0px 4px 24px 0px rgba(var(--box-shadow-rgb), var(--opacity-subtle));
 
 
 
     /* ==================================================
-        # 서브 섹션
+        # 애니메이션
      ================================================== */
-    --variable: value;
+    /* -----------------------------------
+        전환 시간
+     ----------------------------------- */
+    --transition-duration-fast: 0.15s;
+    --transition-duration-normal: 0.2s;
+    --transition-duration-slow: 0.3s;
 
 
-
-    /* ==================================================
-        # 서브 섹션
-     ================================================== */
-    --variable: value;
-
-
-
-    /* ==================================================
-        # 서브 섹션
-     ================================================== */
-    --variable: value;
+    /* -----------------------------------
+        전환 효과
+     ----------------------------------- */
+    --transition-ease: ease-in-out;
+    --transition-ease-in: ease-in;
+    --transition-ease-out: ease-out;
 }
 
 
@@ -291,6 +378,11 @@ html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
@@ -356,8 +448,32 @@ a {
     text-decoration: none;
 }
 
+label,
+input,
+textarea,
+select,
+button {
+    position: relative;
+    vertical-align: middle;
+    transform: rotate(0.03deg);
+}
+
+label {
+    display: inline-block;
+}
+
+input,
+textarea,
+select,
+button {
+    display: inline-flex;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: var(--border-width-none);
+    background: none;
+}
+
 select::-ms-expand {
     display: none;
 }
-
-
