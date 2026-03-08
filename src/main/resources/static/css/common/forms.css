@@ -8,12 +8,66 @@
  
  
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    99_섹션
+    99_폼
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ==================================================
-    # 서브 섹션
+    # 내부 레이아웃
  ================================================== */ 
-element {}
+.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    &:not(:last-child) {
+        margin-bottom: var(--spacing-md);
+    }
+
+    &.is-stacked:not(:last-child) {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    &.is-grouped {
+        flex-direction: row;
+
+        &:not(:last-child) {
+            margin-right: var(--spacing-lg);
+        }
+    }
+}
+
+.field .controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+    &.has-addons {}
+
+    &.has-inline {
+
+    }
+}
+
+.field .controls .control:first-child:not(:only-child) .input,
+.field .controls .control:first-child:not(:only-child) .select select,
+.field .controls .control:first-child:not(:only-child) .button {
+    border-radius: var(--border-radius-none);
+}
+
+.field .controls.has-addons .control:not(:first-child):not(:last-child) .input,
+.field .controls.has-addons .control:not(:first-child):not(:last-child) .select select,
+.field .controls.has-addons .control:not(:first-child):not(:last-child) .button {
+    border-start-end-radius: var(--border-radius-none);
+    border-end-end-radius: var(--border-radius-none);
+}
+
+.field .controls .control:last-child:not(:only-child) .input,
+.field .controls .control:last-child:not(:only-child) .select select,
+.field .controls .control:last-child:not(:only-child) .button {
+    border-end-start-radius: var(--border-radius-none);
+    border-start-start-radius: var(--border-radius-none);
+}
 
 
 

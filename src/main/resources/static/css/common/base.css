@@ -266,7 +266,7 @@
     --border-radius-sm: 2px;
     --border-radius-md: 4px;
     --border-radius-lg: 8px;
-    --border-radius-none: 0px;
+    --border-radius-none: 0;
 
     /* 모서리 형태 */
     --border-radius-pill: 9999px;
