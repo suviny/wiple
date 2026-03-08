@@ -42,43 +42,91 @@
     align-items: center;
     width: 100%;
 
-    &.has-addons {}
+    &.has-addons {
+        gap: var(--spacing-none);
+    }
 
     &.has-inline {
-
+        gap: var(--spacing-none) var(--spacing-xs);
     }
 }
 
-.field .controls .control:first-child:not(:only-child) .input,
-.field .controls .control:first-child:not(:only-child) .select select,
-.field .controls .control:first-child:not(:only-child) .button {
-    border-radius: var(--border-radius-none);
+.field .controls.has-addons .control:not(:last-child) {
+    margin-inline-end: -1px;
+}
+
+.field .controls.has-addons .control:first-child:not(:only-child) .input,
+.field .controls.has-addons .control:first-child:not(:only-child) .select select,
+.field .controls.has-addons .control:first-child:not(:only-child) .button {
+    border-start-end-radius: var(--border-radius-none);
+    border-end-end-radius: var(--border-radius-none);
 }
 
 .field .controls.has-addons .control:not(:first-child):not(:last-child) .input,
 .field .controls.has-addons .control:not(:first-child):not(:last-child) .select select,
 .field .controls.has-addons .control:not(:first-child):not(:last-child) .button {
-    border-start-end-radius: var(--border-radius-none);
-    border-end-end-radius: var(--border-radius-none);
+    border-radius: var(--border-radius-none);
 }
 
-.field .controls .control:last-child:not(:only-child) .input,
-.field .controls .control:last-child:not(:only-child) .select select,
-.field .controls .control:last-child:not(:only-child) .button {
+.field .controls.has-addons .control:last-child:not(:only-child) .input,
+.field .controls.has-addons .control:last-child:not(:only-child) .select select,
+.field .controls.has-addons .control:last-child:not(:only-child) .button {
     border-end-start-radius: var(--border-radius-none);
     border-start-start-radius: var(--border-radius-none);
+}
+
+.field .controls.has-inline span,
+.field .controls.has-inline i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-md);
+}
+
+.field .controls .control {
+    flex: 0 0 auto;
+
+    &.is-expanded {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+}
+
+.field .control {
+    position: relative;
+
+    &:focus-within {
+        z-index: 1;
+    }
 }
 
 
 
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    99_섹션
+    02_폼 요소
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ==================================================
-    # 서브 섹션
+    # 라벨
  ================================================== */
-element {}
+.label {
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-strong);
+
+    &.required:after {
+        content: '*';
+        font-size: var(--text-sm);
+        color: var(--color-secondary);
+    }
+}
+
+
+
+/* ==================================================
+    # 입력 필드
+ ================================================== */
+.element {}
 
 
 
