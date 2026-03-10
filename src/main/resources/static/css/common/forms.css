@@ -2,13 +2,17 @@
 
 
 
+/*!
+ * enter the description about this file...
+ */
+
+
+
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    01_공통
+    01_전체
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 .content-form {
-
-
 }
 
 
@@ -18,58 +22,82 @@
     02_폼 요소
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ==================================================
-    # 라벨 및 폼 텍스트
+    # 라벨 및 텍스트
  ================================================== */
 .label {
-    margin-bottom: var(--form-label-margin-bottom);
+    margin-bottom: var(--spacing-xs);
     font-family: inherit;
-    font-weight: var(--form-label-weight);
-    color: var(--form-label-color);
+    font-weight: var(--font-weight-bold);
+    font-size: inherit;
+    color: var(--color-text-strong);
 
-    /* 필수 입력 항목 표시 */
     &.is-required:after {
-        margin-left: var(--form-required-icon-margin-left);
-        font-size: var(--form-label-icon-size);
-        color: var(--form-required-icon-color);
+        margin-left: var(--spacing-xs);
+        font-size: calc(var(--text-sm) - 2px);
+        color: var(--color-secondary);
         content: "*";
     }
 }
 
 
+.help {
+    margin-top: var(--spacing-xs);
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+}
+
+
 
 /* ==================================================
-    # 픔 컨트롤 요소
+    # 폼 컨트롤 요소
  ================================================== */
 .input,
 .select select {
-    width: var(--form-control-width);
-    height: var(--form-control-height);
-    padding: var(--form-control-padding-v) var(--form-control-padding-h);
-    border: var(--border-width-normal) solid var(--form-control-border-color);
-    border-radius: var(--form-control-rounded);
-    background-color: var(--form-control-background-color);
+    width: var(--control-element-width);
+    height: var(--control-element-height);
+    padding: var(--spacing-sm) calc(var(--spacing-sm) + 2px);
+    border: var(--border-width-normal) solid var(--color-border);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--color-background-content);
     font-family: inherit;
     font-weight: inherit;
     font-size: inherit;
-    color: var(--form-control-text-color);
+    color: var(--color-text);
 }
 
 
 .input {
     &::placeholder {
-        color: var(--form-input-placeholder-color);
+        color: var(--color-text-placeholder);
     }
 
     &:focus {
-        border-color: var(--form-control-border-focus-color);
+        border-color: var(--color-border-focus);
     }
 }
 
 
-.select select {
+.select:after {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+    background: url("/images/form/ic-select-arrow-down.svg") no-repeat center / contain;
+    content: "";
+    transform: translateY(-50%);
+    pointer-events: none;
+
 }
 
-.select:after {
+.select select {
+    width: var(--control-element-width);
+
+    &:focus {
+        border-color: var(--color-border-focus);
+    }
 }
 
 
@@ -85,14 +113,23 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
     width: 100%;
 
-    &:not(:last-child) {}
+    &:not(:last-child) {
+        margin-bottom: var(--spacing-md);
+    }
 
-    &.is-stacked {}
+    &.is-stacked:not(:last-child) {
+        margin-bottom: var(--spacing-lg);
+    }
 
-    &.is-grouped {}
+    &.is-grouped {
+        flex-direction: row;
+
+        &:not(:last-child) {
+            margin-right: var(--spacing-lg);
+        }
+    }
 }
 
 
@@ -100,41 +137,93 @@
 /* ==================================================
     # 폼 컨트롤 요소 레이아웃
  ================================================== */
-.control {}
+.field .control {
+    flex: 1 1 0;
+    position: relative;
+    min-width: 0;
+
+    &:focus-within {
+        z-index: 1;
+    }
+}
 
 
-/**/
 .field .controls {
-    &.is-grouped {}
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
 
-    &.has-inline {}
+    &.has-inline {
+        gap: var(--spacing-none) var(--spacing-xs);
+    }
 
-    &.has-addons {}
+    &.has-addons {
+        gap: var(--spacing-none);
+    }
 }
 
 .field .controls .control.is-expanded,
 .field .controls.has-inline .control.is-expanded,
-.field .controls.has-addons .control.is-expanded {}
+.field .controls.has-addons .control.is-expanded {
+    flex-grow: 2;
+}
 
 .field .controls .control:not(.is-expanded),
 .field .controls.has-inline .control:not(.is-expanded),
-.field .controls.has-addons .control:not(.is-expanded) {}
-
-.field .controls.has-inline span,
-.field .controls.has-inline i {
+.field .controls.has-addons .control:not(.is-expanded) {
+    flex: 0 0 auto;
 }
 
-.field .controls.has-addons .control:first-child:not(:only-child) .input,
-.field .controls.has-addons .control:first-child:not(:only-child) .select select,
-.field .controls.has-addons .control:first-child:not(:only-child) .button {
+.field .controls.has-inline .inline-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-md);
 }
 
-.field .controls.has-addons .control:not(:first-child):not(:last-child) .input,
-.field .controls.has-addons .control:not(:first-child):not(:last-child) .select select,
-.field .controls.has-addons .control:not(:first-child):not(:last-child) .button {
+.field .controls.has-addons .control:not(:last-child) {
+    margin-inline-end: -1px;
 }
 
-.field .controls.has-addons .control:last-child:not(:only-child) .input,
-.field .controls.has-addons .control:last-child:not(:only-child) .select select,
-.field .controls.has-addons .control:last-child:not(:only-child) .button {
+.field .controls.has-addons .control:first-child:not(:only-child) * {
+    border-start-end-radius: var(--border-radius-none);
+    border-end-end-radius: var(--border-radius-none);
 }
+
+.field .controls.has-addons .control:not(:first-child):not(:last-child) * {
+    border-radius: var(--border-radius-none);
+}
+
+.field .controls.has-addons .control:last-child:not(:only-child) * {
+    border-end-start-radius: var(--border-radius-none);
+    border-start-start-radius: var(--border-radius-none);
+}
+
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    04_폼 유효성 UI
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/*
+    - '.is-valid', '.is-invalid'는 첫번째 '.control'에 추가되도록 한다.
+    - 유효성 검증 결과를 나타내는 아이콘을 보여주고 싶은 .field의 .control 한정
+    '.is-valid, '.is-invalid' 옆에 '.has-feedback-icon'을 추가하도록 한다.
+    - '.feedback'은 js로 클래스를 추가한다. (.control 기준으로 부모요소(.field)를 찾고
+    그 부모에서 가장 마지막 자식 요소를 추가하도록한다.
+*/
+.is-valid .input,
+.is-valid, .select select {
+    border-color: var(--color-success);
+}
+
+.is-invalid .input,
+.is-invalid .select select {
+    border-color: var(--color-danger);
+}
+
+.is-valid.has-feedback-icon,
+.is-invalid.has-feedback-icon {}
+
