@@ -1,103 +1,14 @@
 @charset "UTF-8";
 
-/*!
- * enter the description about this file...
- */
- 
 
- 
- 
+
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    99_폼
+    01_공통
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ==================================================
-    # 내부 레이아웃
- ================================================== */ 
-.field {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
+.content-form {
 
-    &:not(:last-child) {
-        margin-bottom: var(--spacing-md);
-    }
 
-    &.is-stacked:not(:last-child) {
-        margin-bottom: var(--spacing-lg);
-    }
-
-    &.is-grouped {
-        flex-direction: row;
-
-        &:not(:last-child) {
-            margin-right: var(--spacing-lg);
-        }
-    }
-}
-
-.field .controls {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-
-    &.has-addons {
-        gap: var(--spacing-none);
-    }
-
-    &.has-inline {
-        gap: var(--spacing-none) var(--spacing-xs);
-    }
-}
-
-.field .controls.has-addons .control:not(:last-child) {
-    margin-inline-end: -1px;
-}
-
-.field .controls.has-addons .control:first-child:not(:only-child) .input,
-.field .controls.has-addons .control:first-child:not(:only-child) .select select,
-.field .controls.has-addons .control:first-child:not(:only-child) .button {
-    border-start-end-radius: var(--border-radius-none);
-    border-end-end-radius: var(--border-radius-none);
-}
-
-.field .controls.has-addons .control:not(:first-child):not(:last-child) .input,
-.field .controls.has-addons .control:not(:first-child):not(:last-child) .select select,
-.field .controls.has-addons .control:not(:first-child):not(:last-child) .button {
-    border-radius: var(--border-radius-none);
-}
-
-.field .controls.has-addons .control:last-child:not(:only-child) .input,
-.field .controls.has-addons .control:last-child:not(:only-child) .select select,
-.field .controls.has-addons .control:last-child:not(:only-child) .button {
-    border-end-start-radius: var(--border-radius-none);
-    border-start-start-radius: var(--border-radius-none);
-}
-
-.field .controls.has-inline span,
-.field .controls.has-inline i {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--text-md);
-}
-
-.field .controls .control {
-    flex: 0 0 auto;
-
-    &.is-expanded {
-        flex: 1 1 0;
-        min-width: 0;
-    }
-}
-
-.field .control {
-    position: relative;
-
-    &:focus-within {
-        z-index: 1;
-    }
 }
 
 
@@ -107,56 +18,123 @@
     02_폼 요소
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ==================================================
-    # 라벨
+    # 라벨 및 폼 텍스트
  ================================================== */
 .label {
-    margin-bottom: var(--spacing-sm);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-text-strong);
+    margin-bottom: var(--form-label-margin-bottom);
+    font-family: inherit;
+    font-weight: var(--form-label-weight);
+    color: var(--form-label-color);
 
-    &.required:after {
-        content: '*';
-        font-size: var(--text-sm);
-        color: var(--color-secondary);
+    /* 필수 입력 항목 표시 */
+    &.is-required:after {
+        margin-left: var(--form-required-icon-margin-left);
+        font-size: var(--form-label-icon-size);
+        color: var(--form-required-icon-color);
+        content: "*";
     }
 }
 
 
 
 /* ==================================================
-    # 입력 필드
+    # 픔 컨트롤 요소
  ================================================== */
-.element {}
+.input,
+.select select {
+    width: var(--form-control-width);
+    height: var(--form-control-height);
+    padding: var(--form-control-padding-v) var(--form-control-padding-h);
+    border: var(--border-width-normal) solid var(--form-control-border-color);
+    border-radius: var(--form-control-rounded);
+    background-color: var(--form-control-background-color);
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    color: var(--form-control-text-color);
+}
+
+
+.input {
+    &::placeholder {
+        color: var(--form-input-placeholder-color);
+    }
+
+    &:focus {
+        border-color: var(--form-control-border-focus-color);
+    }
+}
+
+
+.select select {
+}
+
+.select:after {
+}
 
 
 
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    99_섹션
+    03_폼 요소 레이아웃
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ==================================================
-    # 서브 섹션
+    # 폼 필드 레이아웃
  ================================================== */
-element {}
+.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    &:not(:last-child) {}
+
+    &.is-stacked {}
+
+    &.is-grouped {}
+}
 
 
 
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    99_섹션
- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ==================================================
-    # 서브 섹션
+    # 폼 컨트롤 요소 레이아웃
  ================================================== */
-element {}
+.control {}
 
 
+/**/
+.field .controls {
+    &.is-grouped {}
 
+    &.has-inline {}
 
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    99_섹션
- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ==================================================
-    # 서브 섹션
- ================================================== */
-element {}
+    &.has-addons {}
+}
+
+.field .controls .control.is-expanded,
+.field .controls.has-inline .control.is-expanded,
+.field .controls.has-addons .control.is-expanded {}
+
+.field .controls .control:not(.is-expanded),
+.field .controls.has-inline .control:not(.is-expanded),
+.field .controls.has-addons .control:not(.is-expanded) {}
+
+.field .controls.has-inline span,
+.field .controls.has-inline i {
+}
+
+.field .controls.has-addons .control:first-child:not(:only-child) .input,
+.field .controls.has-addons .control:first-child:not(:only-child) .select select,
+.field .controls.has-addons .control:first-child:not(:only-child) .button {
+}
+
+.field .controls.has-addons .control:not(:first-child):not(:last-child) .input,
+.field .controls.has-addons .control:not(:first-child):not(:last-child) .select select,
+.field .controls.has-addons .control:not(:first-child):not(:last-child) .button {
+}
+
+.field .controls.has-addons .control:last-child:not(:only-child) .input,
+.field .controls.has-addons .control:last-child:not(:only-child) .select select,
+.field .controls.has-addons .control:last-child:not(:only-child) .button {
+}

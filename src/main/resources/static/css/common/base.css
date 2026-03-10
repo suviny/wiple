@@ -381,6 +381,9 @@ html {
 }
 
 body {
+    font-family: var(--font-family-body);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--text-md);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
