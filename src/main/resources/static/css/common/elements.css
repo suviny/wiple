@@ -11,9 +11,87 @@
     99_텍스트
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ==================================================
-    # 서브 섹션
- ================================================== */ 
-element {}
+    # 헤딩
+ ================================================== */
+.heading,
+.sub-heading {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+.heading {
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-heavy);
+    font-size: var(--text-xl);
+    color: var(--color-text-strong);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-heading);
+}
+
+.sub-heading {
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: var(--text-lg);
+    color: var(--color-text-muted);
+}
+
+
+
+/* ==================================================
+    # 캡션
+ ================================================== */
+.caption {
+    display: inline-block;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: var(--text-sm);
+    line-height: var(--line-height-ui);
+    letter-spacing: var(--letter-spacing-caption);
+}
+
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    99_구분 요소
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ==================================================
+    # 구분선
+ ================================================== */
+/* 기본 구분선 */
+.divider {
+    display: block;
+    width: 100%;
+    height: var(--border-width-normal);
+    border: none;
+    background-color: var(--color-border);
+
+    /* 텍스트 포함 구분선 */
+    &.has-text {
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        color: var(--color-text-muted);
+
+        &::before,
+        &::after {
+            flex-grow: 1;
+            background-color: var(--color-border);
+            font-size: var(--text-md);
+            content: '';
+        }
+
+        &::before {
+            margin-right: var(--spacing-sm);
+            margin-left: var(--spacing-none);
+        }
+
+        &::after {
+            margin-right: var(--spacing-none);
+            margin-left: var(--spacing-sm);
+        }
+    }
+}
 
 
 
@@ -33,9 +111,59 @@ element {}
     99_이미지
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ==================================================
-    # 서브 섹션
+    # 이미지 컨테이너
  ================================================== */
-element {}
+.has-img {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: fit-content;
+}
+
+
+
+/* ==================================================
+    # 이미지 크기
+ ================================================== */
+.is-size-avatar-sm {
+    max-width: var(--img-size-avatar-sm);
+}
+
+.is-size-avatar-md {
+    max-width: var(--img-size-avatar-md);
+}
+
+.is-size-avatar-lg {
+    max-width: var(--img-size-avatar-lg);
+}
+
+.is-size-thumb-sm {
+    max-width: var(--img-size-thumbnail-sm);
+}
+
+.is-size-thumb-md {
+    max-width: var(--img-size-thumbnail-md);
+}
+
+.is-size-thumb-lg {
+    max-width: var(--img-size-thumbnail-lg);
+}
+
+.is-size-card-sm {
+    max-width: var(--img-size-card-sm);
+}
+
+.is-size-card-md {
+    max-width: var(--img-size-card-md);
+}
+
+.is-size-card-lg {
+    max-width: var(--img-size-card-lg);
+}
+
+.is-size-full-width {
+    max-width: 100%;
+}
 
 
 

@@ -140,6 +140,8 @@
 
     --color-text: var(--palette-gray-800);
     --color-text-on-color: var(--palette-white);
+    --color-text-primary: var(--color-primary);
+    --color-text-secondary: var(--color-secondary);
     --color-text-strong: var(--palette-gray-950);
     --color-text-muted: var(--palette-gray-600);
     --color-text-placeholder: var(--palette-gray-500);

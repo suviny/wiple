@@ -489,6 +489,27 @@
 
 
 /* ==================================================
+    # 색상
+ ================================================== */
+.is-text-primary {
+    color: var(--color-text-primary) !important;
+}
+
+.is-text-secondary {
+    color: var(--color-text-secondary) !important;
+}
+
+.is-text-link {
+    color: var(--color-link) !important;
+}
+
+.is-text-help {
+    color: var(--color-text-muted) !important;
+}
+
+
+
+/* ==================================================
     # 변환
  ================================================== */
 .is-underlined-hover:hover {
