@@ -79,8 +79,119 @@ element {}
     # 서브 섹션
  ================================================== */
 .button {
-
+    --button-border-color: var(--color-border);
+    --button-background-color: var(--palette-gray-100);
+    --button-background-hover-color: var(--palette-gray-200);
+    --button-text-color: var(--color-text-muted);
 }
+
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    overflow: hidden;
+    width: var(--control-element-width);
+    min-width: 0;
+    height: var(--control-element-height);
+    padding: var(--control-element-padding-y) var(--control-element-padding-x);
+    border: var(--border-width-normal) solid var(--button-border-color);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--button-background-color);
+    font-family: inherit;
+    font-weight: var(--font-weight-bold);
+    font-size: inherit;
+    color: var(--button-text-color);
+    text-align: center;
+    white-space: nowrap;
+
+    &:hover:not(.is-outlined) {
+        background-color: var(--button-background-hover-color);
+    }
+}
+
+
+.button.is-small {
+    width: 80px;
+}
+
+.button.is-medium {
+    width: 120px;
+}
+
+.button.is-large {
+    width: 160px;
+}
+
+
+.button.is-primary {
+    --button-border-color: var(--color-primary);
+    --button-background-color: var(--color-primary);
+    --button-background-hover-color: var(--palette-royal-blue-600);
+    --button-text-color: var(--color-text-on-color);
+}
+
+.button.is-secondary {
+    --button-border-color: var(--color-secondary);
+    --button-background-color: var(--color-secondary);
+    --button-background-hover-color: var(--palette-orange-600);
+    --button-text-color: var(--color-text-on-color);
+}
+
+
+.button.is-outlined {
+    border-color: var(--button-border-color);
+    background-color: var(--color-background-content);
+    color: var(--button-background-color);
+
+    &:hover {
+        border-width: 2px;
+    }
+}
+
+
+.button.is-kakao {
+    --button-border-color: var(--palette-yellow-500);
+    --button-background-color: var(--palette-yellow-500);
+    --button-text-color: var(--palette-concrete-900);
+}
+
+.button.is-google-neutral {
+    --button-border-color: var(--palette-concrete-100);
+    --button-background-color: var(--palette-concrete-100);
+    --button-text-color: var(--palette-concrete-900);
+}
+
+.button.is-google-light {
+    --button-border-color: var(--palette-gray-600);
+    --button-background-color: var(--color-background-content);
+    --button-text-color: var(--palette-concrete-900);
+}
+
+
+.button.has-only-icon {
+    width: auto;
+    aspect-ratio: var(--img-ratio-avatar);
+}
+
+/* i태그를 사용한 아이콘일 경우 */
+.button .icon {
+    display: inline-flex;
+    font-size: var(--icon-sm);
+    line-height: 0;
+}
+
+.button .social-icon {
+    display: flex;
+    flex-shrink: 0;
+    position: static;
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+}
+
+
+
 
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
