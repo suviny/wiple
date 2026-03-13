@@ -54,9 +54,9 @@ public class GlobalExceptionHandler {
     }
 
     private ResponseEntity<ErrorResponse> toResponseEntity(ResponseEnum responseEnum, List<InvalidField> errors) {
-        boolean isInvalid = responseEnum.getStatus().is4xxClientError();
+        boolean is4xx = responseEnum.getStatus().is4xxClientError();
         return ResponseEntity
                 .status(responseEnum.getStatus())
-                .body(isInvalid ? ErrorResponse.fail(responseEnum, errors) : ErrorResponse.error(responseEnum));
+                .body(is4xx ? ErrorResponse.fail(responseEnum, errors) : ErrorResponse.error(responseEnum));
     }
 }

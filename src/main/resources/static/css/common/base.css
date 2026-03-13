@@ -1,18 +1,18 @@
 @charset "UTF-8";
 
-/*!
- * enter the description about this file...
+/*! 
+ * Enter the description about this file...
+ *
+ * name version | (c) 2026. suviny All Rights Reserved. | https://github.com/suviny/ 
  */
- 
- 
- 
- 
+
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    01_웹 폰트
+ *  01_웹 폰트
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ==================================================
-    # 본문 서체
- ================================================== */
+/* ============================================================
+    01-1.본문
+ ============================================================ */
 @font-face {
     font-family: 'Pretendard';
     font-style: normal;
@@ -29,457 +29,106 @@
     font-weight: 600;
     font-display: swap;
     src: local('Pretendard-SemiBold'),
-    url(/fonts/Pretendard-SemiBold.woff2) format('woff2'),
-    url(/fonts/Pretendard-SemiBold.woff) format('woff');
+    url('/fonts/Pretendard-SemiBold.woff2') format('woff2'),
+    url('/fonts/Pretendard-SemiBold.woff') format('woff');
 }
 
-
-/* ==================================================
-    # 헤딩 서체
- ================================================== */
+/* ============================================================
+    01-2.헤딩
+ ============================================================ */
 @font-face {
     font-family: 'Paperlogy';
     font-style: normal;
     font-weight: 800;
     font-display: swap;
     src: local('Paperlogy-8ExtraBold'),
-    url(/fonts/Paperlogy-8ExtraBold.woff2) format('woff2'),
-    url(fonts/Paperlogy-8ExtraBold.woff) format('woff');
+    url('/fonts/Paperlogy-8ExtraBold.woff2') format('woff2'),
+    url('/fonts/Paperlogy-8ExtraBold.woff') format('woff');
 }
 
 
-
-
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    02_사용자 지정 CSS 속성
+ *  02_사용자 지정 CSS 속성
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 :root {
-    /* ==================================================
-        # 색상
-     ================================================== */
-    /* -----------------------------------
-        기본 색상
-     ----------------------------------- */
-    --palette-red-300: #FAA7A7;
-    --palette-red-400: #F57474;
-    --palette-red-500: #EC4747;
-    --palette-red-600: #D92929;
+    --palette-red-100: ;
+    --palette-red-200: ;
+    --palette-red-300: ;
+    --palette-red-400: ;
+    --palette-red-500: ;
+    --palette-red-600: ;
+
+    --palette-orange-100: ;
+    --palette-orange-200: ;
+    --palette-orange-300: ;
+    --palette-orange-400: ;
+    --palette-orange-500: ;
+    --palette-orange-600: ;
+
+    --palette-yellow-100: ;
+    --palette-yellow-200: ;
+    --palette-yellow-300: ;
+    --palette-yellow-400: ;
+    --palette-yellow-500: ;
+    --palette-yellow-600: ;
+
+    --palette-amber-100: ;
+    --palette-amber-200: ;
+    --palette-amber-300: ;
+    --palette-amber-400: ;
+    --palette-amber-500: ;
+    --palette-amber-600: ;
+
+    --palette-green-100: ;
+    --palette-green-200: ;
+    --palette-green-300: ;
+    --palette-green-400: ;
+    --palette-green-500: ;
+    --palette-green-600: ;
+
+    --palette-blue-100: ;
+    --palette-blue-200: ;
+    --palette-blue-300: ;
+    --palette-blue-400: ;
+    --palette-blue-500: ;
+    --palette-blue-600: ;
+
+    --palette-royal-blue-100: ;
+    --palette-royal-blue-200: ;
+    --palette-royal-blue-300: ;
+    --palette-royal-blue-400: ;
+    --palette-royal-blue-500: ;
+    --palette-royal-blue-600: ;
+
+    --palette--0: ;
+    --palette--0: ;
+    --palette--0: ;
+    --palette--0: ;
+
+    --palette-gray-50: ;
+    --palette-gray-100: ;
+    --palette-gray-200: ;
+    --palette-gray-300: ;
+    --palette-gray-400: ;
+    --palette-gray-500: ;
+    --palette-gray-600: ;
+    --palette-gray-700: ;
+    --palette-gray-800: ;
+    --palette-gray-900: ;
+    --palette-gray-950: ;
 
-    --palette-orange-300: #FEB0A3;
-    --palette-orange-400: #FB836E;
-    --palette-orange-500: #F25B41;
-    --palette-orange-600: #E03E22;
 
-    --palette-amber-300: #FEC44B;
-    --palette-amber-400: #FDAC22;
-    --palette-amber-500: #F78909;
-    --palette-amber-600: #DB6404;
-
-    --palette-yellow-400: #FFF40D;
-    --palette-yellow-500: #FEE500;
-    --palette-yellow-600: #D1AA00;
-
-    --palette-green-300: #74E1B2;
-    --palette-green-400: #3CCB92;
-    --palette-green-500: #19B079;
-    --palette-green-600: #0C8F62;
-
-    --palette-blue-300: #8ECAFF;
-    --palette-blue-400: #59ACFF;
-    --palette-blue-500: #2984FE;
-    --palette-blue-600: #1C6AF4;
-
-    --palette-royal-blue-300: #9FBFFF;
-    --palette-royal-blue-400: #799BFF;
-    --palette-royal-blue-500: #5A76FA;
-    --palette-royal-blue-600: #3C4EEF;
-
-    /* 회색조 */
-    --palette-concrete-50: #FAFAFA;
-    --palette-concrete-100: #F2F2F2;
-    --palette-concrete-200: #E6E6E6;
-    --palette-concrete-900: #1A1A1A;
-
-    --palette-gray-50: #F9FAFB;
-    --palette-gray-100: #EEEFF1;
-    --palette-gray-200: #E6E7EA;
-    --palette-gray-300: #D3D5D9;
-    --palette-gray-400: #9FA4AC;
-    --palette-gray-500: #8B90A0;
-    --palette-gray-600: #787D8A;
-    --palette-gray-700: #626671;
-    --palette-gray-800: #52555D;
-    --palette-gray-900: #4F565F;
-    --palette-gray-950: #303236;
-
-    --palette-white: #FFFFFF;
-    --palette-black: #202123;
-
-
-    /* -----------------------------------
-        시맨틱 색상
-     ----------------------------------- */
-    --color-primary: var(--palette-royal-blue-500);
-    --color-secondary: var(--palette-orange-500);
-
-    --color-success: var(--palette-green-400);
-    --color-warning: var(--palette-amber-400);
-    --color-danger: var(--palette-red-400);
-
-    --color-link: var(--palette-blue-500);
-    --color-link-hover: var(--palette-blue-600);
-
-    --color-border: var(--palette-gray-300);
-    --color-border-hover: var(--palette-gray-800);
-    --color-border-focus: var(--color-primary);
-    --color-border-disabled: var(--palette-gray-200);
-
-    --color-background: var(--palette-gray-50);
-    --color-background-content: var(--palette-white);
-    --color-background-disabled: var(--palette-gray-200);
-
-    --color-text: var(--palette-gray-800);
-    --color-text-on-color: var(--palette-white);
-    --color-text-primary: var(--color-primary);
-    --color-text-secondary: var(--color-secondary);
-    --color-text-strong: var(--palette-gray-950);
-    --color-text-muted: var(--palette-gray-600);
-    --color-text-placeholder: var(--palette-gray-500);
-    --color-text-disabled: var(--palette-gray-400);
-
-    --color-icon: var(--palette-gray-500);
-    --color-icon-on-color: var(--palette-white);
-
-
-
-    /* ==================================================
-        # 타이포그래피
-     ================================================== */
-    /* -----------------------------------
-        글꼴
-     ----------------------------------- */
-    --font-family-fallback: system-ui, -apple-system, sans-serif;
-
-    --font-family-heading: 'Paperlogy', 'Pretendard', var(--font-family-fallback);
-    --font-family-body: 'Pretendard', var(--font-family-fallback);
-    --font-family-icon: 'fontello';
-
-
-    /* -----------------------------------
-        텍스트 굵기
-     ----------------------------------- */
-    --font-weight-regular: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 600;
-    --font-weight-heavy: 800;
-
-
-    /* -----------------------------------
-        텍스트 크기
-     ----------------------------------- */
-    --text-sm: 12px;
-    --text-md: 13px;
-    --text-lg: 18px;
-    --text-xl: 24px;
-
-
-    /* -----------------------------------
-        텍스트 간격
-     ----------------------------------- */
-    /* 자간 */
-    --letter-spacing-none: 0;
-    --letter-spacing-heading: -0.05em;
-    --letter-spacing-body: -0.02em;
-    --letter-spacing-caption: 0.02em;
-
-    /* 행간 */
-    --line-height-ui: 1;
-    --line-height-heading: 1.3;
-    --line-height-body: 1.7;
-
-
-
-    /* ==================================================
-        # 아이콘
-     ================================================== */
-    /* -----------------------------------
-        아이콘 크기
-     ----------------------------------- */
-    /* 텍스트 대비 아이콘 크기 보정 값 */
-    --icon-size-offset: 2px;
-
-    --icon-sm: calc(var(--text-sm) + var(--icon-size-offset));          /* 14px */
-    --icon-md: calc(var(--text-md) + var(--icon-size-offset) + 1px);    /* 16px */
-    --icon-lg: calc(var(--text-lg) + var(--icon-size-offset));          /* 20px */
-    --icon-xl: calc(var(--text-xl) + var(--icon-size-offset));          /* 26px */
-
-
-
-    /* ==================================================
-        # 간격
-     ================================================== */
-    /* 간격의 기준 단위 */
-    --spacing-unit: 4px;
-
-    /* 간격 스케일 */
-    --spacing-xs: calc(var(--spacing-unit) * 1);    /* 4px */
-    --spacing-sm: calc(var(--spacing-unit) * 2);    /* 8px */
-    --spacing-md: calc(var(--spacing-unit) * 4);    /* 16px */
-    --spacing-lg: calc(var(--spacing-unit) * 6);    /* 24px */
-    --spacing-xl: calc(var(--spacing-unit) * 8);    /* 32px */
-    --spacing-none: calc(var(--spacing-unit) * 0);  /* 0px */
-
-
-
-    /* ==================================================
-        # 컨트롤 요소
-     ================================================== */
-    /* -----------------------------------
-        컨트롤 요소 크기
-     ----------------------------------- */
-    /* 너비 */
-    --control-element-width: 100%;
-    /* 높이 */
-    --control-element-height: 40px;
-    --control-element-height-min: calc(var(--control-element-height) * 4);
-    --control-element-height-max: calc(var(--control-element-height) * 8);
-
-
-    /* -----------------------------------
-        컨트롤 요소 내부 여백
-     ----------------------------------- */
-    --control-element-padding-unit: 2px;
-    --control-element-padding-x: calc(var(--spacing-md) - var(--control-element-padding-unit)); /* 14px */
-    --control-element-padding-y: calc(var(--spacing-sm) + var(--control-element-padding-unit)); /* 10px */
-
-
-
-    /* ==================================================
-        # 테두리
-     ================================================== */
-    /* 굵기 */
-    --border-width-normal: 1px;
-    --border-width-medium: 3px;
-    --border-width-bold: 5px;
-    --border-width-none: 0;
-
-
-    /* 모서리 */
-    --border-radius-sm: 2px;
-    --border-radius-md: 4px;
-    --border-radius-lg: 8px;
-    --border-radius-none: 0;
-
-    /* 모서리 형태 */
-    --border-radius-pill: 9999px;
-    --border-radius-circle: 50%;
-
-
-
-    /* ==================================================
-        # 이미지 크기 및 비율
-     ================================================== */
-    /* -----------------------------------
-        이미지 크기
-     ----------------------------------- */
-    /* 크기별 단위 */
-    --img-size-avatar-unit: 12px;
-    --img-size-thumb-unit: 42px;
-    --img-size-card-unit: 72px;
-
-    --img-size-avatar-sm: calc(var(--img-size-avatar-unit) * 2);
-    --img-size-avatar-md: calc(var(--img-size-avatar-unit) * 4);
-    --img-size-avatar-lg: calc(var(--img-size-avatar-unit) * 6);
-
-    --img-size-thumbnail-sm: calc(var(--img-size-thumb-unit) * 2);
-    --img-size-thumbnail-md: calc(var(--img-size-thumb-unit) * 4);
-    --img-size-thumbnail-lg: calc(var(--img-size-thumb-unit) * 6);
-
-    --img-size-card-sm: calc(var(--img-size-card-unit) * 2);
-    --img-size-card-md: calc(var(--img-size-card-unit) * 4);
-    --img-size-card-lg: calc(var(--img-size-card-unit) * 6);
-
-
-    /* -----------------------------------
-        이미지 비율
-     ----------------------------------- */
-    --img-ratio-avatar: 1 / 1;
-    --img-ratio-thumbnail: 16 / 9;
-    --img-ratio-card: 4 / 3;
-
-
-
-    /* ==================================================
-        # 투명도
-     ================================================== */
-    --opacity-faint: 0.08;
-    --opacity-subtle: 0.12;
-    --opacity-weak: 0.3;
-    --opacity-strong: 0.7;
-    --opacity-heavy: 0.8;
-
-
-
-    /* ==================================================
-        # 그림자
-     ================================================== */
-    /* 그림자 색상 */
-    --box-shadow-rgb: 82, 85, 93;
-
-
-    /* -----------------------------------
-        그림자 크기
-     ----------------------------------- */
-    --box-shadow-sm: 0px 2px 2px 0px rgba(var(--box-shadow-rgb), var(--opacity-faint));
-    --box-shadow-md: 0px 4px 8px 0px rgba(var(--box-shadow-rgb), var(--opacity-subtle));
-    --box-shadow-lg: 0px 4px 24px 0px rgba(var(--box-shadow-rgb), var(--opacity-subtle));
-
-
-
-    /* ==================================================
-        # 애니메이션
-     ================================================== */
-    /* -----------------------------------
-        전환 시간
-     ----------------------------------- */
-    --transition-duration-fast: 0.15s;
-    --transition-duration-normal: 0.2s;
-    --transition-duration-slow: 0.3s;
-
-
-    /* -----------------------------------
-        전환 효과
-     ----------------------------------- */
-    --transition-ease: ease-in-out;
-    --transition-ease-in: ease-in;
-    --transition-ease-out: ease-out;
 }
 
 
-
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    03_초기화
- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+/* ============================================================
+    NN-NN.Sub-Section-Title
+ ============================================================ */
+.element-1 {
 }
 
-html,
-body {
-    width: 100%;
-    height: 100%;
-}
-
-html {
-    text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
-}
-
-body {
-    font-family: var(--font-family-body);
-    font-weight: var(--font-weight-medium);
-    font-size: var(--text-md);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
-address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b,
-u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, article, aside, embed, output,
-table, tbody, tfoot, thead, tr, th, td, details, canvas, figure, figcaption, footer, header, hgroup, menu, nav,
-ruby, section, summary, time, mark, audio, video {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    vertical-align: baseline;
-}
-
-details, figcaption, figure, hgroup, menu, img, header, footer, section, nav, article, aside,
-p, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, span, code, em, strong, table, th, td,
-form, fieldset, legend, label, input, textarea, select, button {
-    display: block;
-}
-
-ol,
-ul {
-    list-style: none;
-}
-
-q::before,
-q::after,
-blockquote::before,
-blockquote::after {
-    content: none;
-    content: '';
-}
-
-img,
-fieldset {
-    border: 0;
-    background: none;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-legend {
-    overflow: hidden;
-    position: absolute;
-    left: -9999px;
-    font-size: 0;
-}
-
-i {
-    font-style: normal;
-}
-
-a {
-    text-decoration: none;
-}
-
-label,
-input,
-textarea,
-select,
-button {
-    position: relative;
-    vertical-align: middle;
-    line-height: var(--line-height-ui);
-    transform: rotate(0.03deg);
-}
-
-label {
-    display: inline-block;
-}
-
-input,
-textarea,
-select,
-button {
-    display: inline-flex;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: var(--border-width-none);
-    background: none;
-}
-
-select::-ms-expand {
-    display: none;
+/* ---------------------------------------------
+    # Block Title
+ --------------------------------------------- */
+.element-2 {
 }

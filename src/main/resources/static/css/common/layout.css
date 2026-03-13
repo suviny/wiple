@@ -1,68 +1,47 @@
 @charset "UTF-8";
 
-/*!
- * enter the description about this file...
+/*! 
+ * Enter the description about this file...
+ *
+ * name version | (c) 2026. suviny All Rights Reserved. | https://github.com/suviny/ 
  */
- 
- 
- 
- 
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    01_전체
- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* 전역 */
-body {
-    background-color: var(--color-background);
-    font-family: var(--font-family-body);
-    font-weight: var(--font-weight-medium);
-    font-size: var(--text-md);
-    color: var(--color-text);
-    letter-spacing: var(--letter-spacing-body);
-}
-
-/* 최상위 영역 */
-#root {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transform: rotate(0.03deg);
-}
-
 
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    02_중단 영역
+ *  NN_Section-Title
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#container {
-    display: flex;
-    flex: 1;
+.elements {
 }
 
 
-/* ==================================================
-    # 메인 컨텐츠
- ================================================== */
-#content {
-    min-width: 0;
-    padding: var(--spacing-md);
+/* ============================================================
+    NN-NN.Sub-Section-Title
+ ============================================================ */
+.element-1 {
 }
 
+/* ---------------------------------------------
+    # Block Title
+ --------------------------------------------- */
+.element-2 {
+}
 
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    03_하단 영역
+ *  NN_Section-Title
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-#footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: var(--spacing-sm) var(--spacing-md);
+.elements {
 }
 
-#footer .copy {
-    font-size: var(--text-sm);
+
+/* ============================================================
+    NN-NN.Sub-Section-Title
+ ============================================================ */
+.element-1 {
+}
+
+/* ---------------------------------------------
+    # Block Title
+ --------------------------------------------- */
+.element-2 {
 }

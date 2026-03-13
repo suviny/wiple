@@ -3,12 +3,65 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{common/layout/public}">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>로그인</title>
+    <th:block layout:fragment="page-style">
+        <link rel="stylesheet" href="/css/pages/user/login.css">
+    </th:block>
 </head>
-<body>
-</body>
-</html>
+<th:block layout:fragment="page-content">
+    <div class="panels is-stacked">
+        <section class="panel">
+            <header class="panel-header">
+                <div class="has-img is-size-avatar-sm is-margin-auto">
+                    <img src="/images/symbol-wiple.png" alt="로고">
+                </div>
+            </header>
+            <div class="panel-body">
+                <form id="login-form" class="content-form">
+                    <div class="field is-stacked">
+                        <div class="field is-margin-bottom-xs">
+                            <input type="text" name="username" id="email" class="input" placeholder="이메일" autocomplete="off" autofocus>
+                        </div>
+                        <div class="field">
+                            <input type="password" name="password" id="password" class="input" placeholder="비밀번호" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="field is-stacked">
+                        <div class="field">
+                            <button type="button" id="login-btn" class="button is-primary">로그인</button>
+                        </div>
+                        <div class="field has-text-right">
+                            <a href="#" class="is-text-link is-underlined-hover">비밀번호를 잊으셨나요?</a>
+                        </div>
+                    </div>
+                    <div class="divider has-text">또는</div>
+                    <div class="field is-stacked">
+                        <div class="field">
+                            <button id="kakao-btn" class="buttons is-kakao">
+                                <img src="/images/social/ic-kakao.svg" alt="카카오" class="social-icon">
+                                <span>카카오 계정으로 로그인</span>
+                            </button>
+                        </div>
+                        <div class="field">
+                            <button id="google-btn" class="buttons is-google-neutral">
+                                <img src="/images/social/ic-google.svg" alt="구글" class="social-icon">
+                                <span>구글 계정으로 로그인</span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="panel is-padding-v-md">
+            <div class="panel-body has-text-centered">
+                계정이 없으신가요? <a href="/sign-up" class="is-text-link is-underlined-hover">회원가입</a>
+            </div>
+        </section>
+    </div>
+</th:block>
+
+<th:block layout:fragment="page-script">
+</th:block>
+</html>      
