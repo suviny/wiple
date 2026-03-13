@@ -1,49 +1,144 @@
 @charset "UTF-8";
 
 /*! 
- * Enter the description about this file...
+ * 텍스트 및 테이블, 이미지 등의 기본 구성 요소 스타일 정의
  *
  * wiple-v1.0 | (c) 2026. suviny All Rights Reserved. | https://github.com/suviny/
  */
 
 
 
-
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- *  NN_Section-Title
+    01. 텍스트
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-.elements {
+/* ============================================================
+    # 헤딩
+ ============================================================ */
+.heading,
+.sub-heading {
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+.heading {
+    width: 100%;
+    font-family: var(--font-family-heading);
+    font-weight: var(--font-weight-heavy);
+    font-size: var(--text-size-xl);
+    color: var(--color-text-strong);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-heading);
+}
+
+.sub-heading {
+    width: 100%;
+    margin-top: var(--spacing-sm);
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: var(--text-size-md);
+    color: var(--color-text-muted);
 }
 
 
 /* ============================================================
-    NN-NN.Sub-Section-Title
+    # 캡션
  ============================================================ */
-.element-1 {
+.caption {
+    display: inline-block;
+    width: 100%;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: var(--text-size-xs);
+    line-height: var(--line-height-component);
+    letter-spacing: var(--letter-spacing-caption);
 }
 
-/* ---------------------------------------------
-    # Block Title
- --------------------------------------------- */
-.element-2 {
-}
 
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- *  NN_Section-Title
+    00. 이미지
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-.elements {
+/* 이미지 래퍼 */
+.has-img {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: fit-content;
+}
+
+/* 크기 별 정의 */
+.is-size-avatar-sm {
+    max-width: var(--img-size-avatar-sm);
+}
+.is-size-avatar-md {
+    max-width: var(--img-size-avatar-md);
+}
+.is-size-avatar-lg {
+    max-width: var(--img-size-avatar-lg);
+}
+
+.is-size-thumbnail-sm {
+    max-width: var(--img-size-thumbnail-sm);
+}
+.is-size-thumbnail-md {
+    max-width: var(--img-size-thumbnail-md);
+}
+.is-size-thumbnail-lg {
+    max-width: var(--img-size-thumbnail-lg);
+}
+
+.is-size-card-sm {
+    max-width: var(--img-size-card-sm);
+}
+.is-size-card-md {
+    max-width: var(--img-size-card-md);
+}
+.is-size-card-lg {
+    max-width: var(--img-size-card-lg);
 }
 
 
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    00. 기타
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* ============================================================
-    NN-NN.Sub-Section-Title
+    # 구분선
  ============================================================ */
-.element-1 {
-}
+/* 기본 */
+.divider {
+    display: flex;
+    height: var(--border-width-normal);
+    border: none;
+    background-color: var(--color-border);
 
-/* ---------------------------------------------
-    # Block Title
- --------------------------------------------- */
-.element-2 {
+    /* 텍스트 포함 */
+    &.has-text {
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        height: auto;
+        background-color: transparent;
+        color: var(--color-text-muted);
+
+        &::before,
+        &::after {
+            flex-grow: 1;
+            height: var(--border-width-normal);
+            background-color: var(--color-border);
+            font-size: 0;
+            line-height: var(--line-height-none);
+            content: '';
+        }
+
+        &::before {
+            margin-right: var(--spacing-sm);
+            margin-left: var(--spacing-none);
+        }
+
+        &::after {
+            margin-right: var(--spacing-none);
+            margin-left: var(--spacing-sm);
+        }
+    }
 }

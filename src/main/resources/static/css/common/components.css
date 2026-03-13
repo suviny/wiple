@@ -1,49 +1,464 @@
 @charset "UTF-8";
 
 /*! 
- * Enter the description about this file...
+ * 화면을 구성하는 컴포넌트 요소(네비게이션, 패널, 버튼)와 폼 요소 및 관련 레이아웃에 대한 스타일 정의
  *
  * wiple-v1.0 | (c) 2026. suviny All Rights Reserved. | https://github.com/suviny/
  */
 
 
 
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    00. 패널
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 컨테이너 */
+.panels {
+    display: flex;
+
+    &.is-stacked {
+        flex-direction: column;
+        gap: var(--spacing-md) var(--spacing-none);
+    }
+
+    &.is-grouped {
+        flex-direction: row;
+        gap: var(--spacing-none) var(--spacing-md);
+    }
+}
+
+/* 패널 스타일 */
+.panel {
+    padding: var(--spacing-xl);
+    border: var(--border-width-normal) solid  var(--color-border);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-background-default);
+}
+
+.panel .panel-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.panel-body {
+    line-height: var(--line-height-body);
+}
+
+
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- *  NN_Section-Title
+    00. 탭
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-.elements {
+
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    00. 버튼
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* 기본 */
+.button {
+    --wiple-button-border-color: var(--color-border);
+    --wiple-button-background-color: var(--color-background-default);
+    --wiple-button-background-hover-color: var(--palette-gray-100);
+    --wiple-button-text-color: var(--color-text);
+
+    --wiple-button-width-sm: 80px;
+    --wiple-button-width-md: 80px;
+    --wiple-button-width-lg: 80px;
+
+    --wiple-button-border-width-outlined-hover: 2px;
+}
+
+.button {
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: var(--control-element-width);
+    min-width: 0;
+    height: var(--control-element-height);
+    gap: var(--spacing-sm);
+    padding: var(--control-element-padding);
+    border: var(--border-width-normal) solid var(--wiple-button-border-color);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--wiple-button-background-color);
+    font-weight: var(--font-weight-bold);
+    color: var(--wiple-button-text-color);
+    white-space: nowrap;
+
+    &:hover:not(.is-outlined, .is-inverted, :disabled,
+                .is-kakao, .is-google-neutral, .is-google-light, .is-google-dark) {
+        background-color: var(--wiple-button-background-hover-color);
+    }
+}
+
+
+/* 색상 */
+.button.is-primary {
+    --wiple-button-border-color: var(--color-primary);
+    --wiple-button-background-color: var(--color-primary);
+    --wiple-button-background-hover-color: var(--color-primary-dark);
+    --wiple-button-text-color: var(--color-text-on);
+
+    --wiple-button-outlined-color: var(--color-primary);
+
+    --wiple-button-inverted-color: var(--color-primary-light);
+    --wiple-button-inverted-hover-color: var(--color-primary-subtle);
+    --wiple-button-inverted-text-color: var(--color-primary);
+}
+
+.button.is-secondary {
+    --wiple-button-border-color: var(--color-secondary);
+    --wiple-button-background-color: var(--color-secondary);
+    --wiple-button-background-hover-color: var(--color-secondary-dark);
+    --wiple-button-hover-color: var(--color-secondary-dark);
+    --wiple-button-text-color: var(--color-text-on);
+
+    --wiple-button-outlined-color: var(--color-secondary);
+
+    --wiple-button-inverted-color: var(--color-secondary-light);
+    --wiple-button-inverted-hover-color: var(--color-secondary-subtle);
+    --wiple-button-inverted-text-color: var(--color-secondary);
+}
+
+
+/* 크기 */
+.button.is-small {
+    width: var(--wiple-button-width-sm);
+    border-radius: var(--border-radius-md);
+}
+.button.is-medium {
+    width: var(--wiple-button-width-md);
+    border-radius: var(--border-radius-md);
+}
+.button.is-large {
+    width: var(--wiple-button-width-lg);
+}
+
+
+/* 스타일 */
+.is-outlined {
+    border-color: var(--wiple-button-outlined-color);
+    background-color: transparent;
+    color: var(--wiple-button-outlined-color);
+
+    &:hover {
+        border-width: var(--wiple-button-border-width-outlined-hover);
+    }
+}
+
+.is-inverted {
+    border-color: var(--wiple-button-inverted-color);
+    background-color: var(--wiple-button-inverted-color);
+    color: var(--wiple-button-inverted-text-color);
+
+    &:hover {
+        background-color: var(--wiple-button-inverted-hover-color);
+        border-color: var(--wiple-button-inverted-hover-color);
+    }
+}
+
+
+/* 상태 */
+.button:disabled {
+    --wiple-button-border-color: var(--color-border-disabled);
+    --wiple-button-background-color: var(--color-background-disabled);
+    --wiple-button-text-color: var(--color-text-muted);
+    --wiple-button-disabled-opacity: var(--opacity-heavy);
+
+    opacity: var(--wiple-button-disabled-opacity);
+}
+
+
+/* 아이콘 버튼 */
+.button .icon {
+    display: inline-flex;
+    font-size: var(--icon-size-sm);
+    line-height: var(--line-height-none);
+}
+
+.button.has-only-icon {
+    width: var(--control-element-width-auto);
+    aspect-ratio: var(--aspect-ratio-avatar);
+}
+
+
+/* 소셜 버튼 */
+.button.is-kakao {
+    --wiple-button-border-color: var(--palette-yellow-500);
+    --wiple-button-background-color: var(--palette-yellow-500);
+    --wiple-button-text-color: var(--palette-brand-neutral-900);
+}
+
+.button.is-google-neutral {
+    --wiple-button-border-color: var(--palette-brand-neutral-100);
+    --wiple-button-background-color: var(--palette-brand-neutral-100);
+    --wiple-button-text-color: var(--palette-brand-neutral-800);
+}
+
+.button.is-google-light {
+    --wiple-button-border-color: var(--color-background-default);
+    --wiple-button-background-color: var(--palette-brand-neutral-500);
+    --wiple-button-text-color: var(--palette-brand-neutral-800);
+}
+
+.button.is-google-dark {
+    --wiple-button-border-color: var(--palette-brand-neutral-950);
+    --wiple-button-background-color: var(--palette-brand-neutral-400);
+    --wiple-button-text-color: var(--palette-brand-neutral-200);
+}
+
+
+.button .social-icon {
+    display: flex;
+    flex-shrink: 0;
+    position: static;
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    00. 폼 요소
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.content-form {
+    --wiple-form-label-color: var(--color-text-strong);
+    --wiple-form-help-text-color: var(--color-text-muted);
+
+    --wiple-form-element-border-color: var(--color-border);
+    --wiple-form-element-border-focus-color: var(--color-border-focus);
+    --wiple-form-element-background-color: var(--color-background-default);
 }
 
 
 /* ============================================================
-    NN-NN.Sub-Section-Title
+    # 라벨 및 폼 텍스트
  ============================================================ */
-.element-1 {
+.label {
+    margin-bottom: var(--spacing-xs);
+    font-weight: var(--font-weight-bold);
+    font-size: inherit;
+    color: var(--wiple-form-label-color);
+
+    &.is-required:after {
+        margin-left: var(--spacing-xs);
+        font-size: var(--icon-size-xs);
+        color: var(--color-secondary);
+        content: "*";
+    }
 }
 
-/* ---------------------------------------------
-    # Block Title
- --------------------------------------------- */
-.element-2 {
+.help {
+    margin-top: var(--spacing-xs);
+    color: var(--wiple-form-help-text-color);
+    vertical-align: middle;
 }
 
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- *  NN_Section-Title
- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-.elements {
+.help .icon {
+    font-size: var(--icon-size-xs);
 }
 
 
 /* ============================================================
-    NN-NN.Sub-Section-Title
+    # 폼 컨트롤 요소
  ============================================================ */
-.element-1 {
+/* 공통 */
+.input,
+.select select {
+    width: var(--control-element-width);
+    height: var(--control-element-height);
+    padding: var(--control-element-padding);
+    border: var(--border-width-normal) solid var(--wiple-form-element-border-color);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--wiple-form-element-background-color);
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    color: var(--color-text);
 }
 
-/* ---------------------------------------------
-    # Block Title
- --------------------------------------------- */
-.element-2 {
+
+/* 입력 필드 */
+.input {
+    &::placeholder {
+        color: var(--color-text-placeholder);
+    }
+
+    &:focus {
+        border-color: var(--wiple-form-element-border-focus-color);
+    }
+}
+
+
+/* 셀렉트 */
+.select::after {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+    background: url("/images/form/ic-arrow-down.svg") no-repeat center / contain;
+    content: "";
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.select select:focus {
+    border-color: var(--wiple-form-element-border-focus-color);
+}
+
+
+
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    00. 폼 요소 레이아웃
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ============================================================
+    # 폼 필드 레이아웃
+ ============================================================ */
+.field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+    &:not(:last-child) {
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* 정렬 방식 */
+    &.is-stacked:not(:last-child) {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    &.is-grouped {
+        flex-direction: row;
+
+        &:not(:last-child) {
+            margin-right: var(--spacing-md);
+        }
+    }
+}
+
+
+/* ============================================================
+    # 폼 컨트롤 요소 레이아웃
+ ============================================================ */
+.field .control {
+    flex: 1 1 0;
+    position: relative;
+    min-width: 0;
+
+    &:focus-within {
+        z-index: 1;
+    }
+}
+
+/* 컨트롤 레이아웃 그룹화 */
+.field .controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    /* 그룹화 방식 */
+    &.has-inline {
+        gap: var(--spacing-xs);
+    }
+
+    &.has-addons {
+        gap: var(--spacing-none);
+    }
+}
+
+.field .controls .control.is-expanded,
+.field .controls.has-inline .control.is-expanded,
+.field .controls.has-addons .control.is-expanded {
+    flex-grow: 2;
+}
+
+.field .controls .control:not(.is-expanded),
+.field .controls.has-inline .control:not(.is-expanded),
+.field .controls.has-addons .control:not(.is-expanded) {
+    flex: 0 0 auto;
+}
+
+.field .controls.has-inline .inline-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--text-size-sm);
+}
+
+
+.field .controls.has-addons .control:not(:last-child) {
+    margin-inline-end: -1px;
+}
+
+.field .controls.has-addons .control:first-child:not(:only-child) * {
+    border-start-end-radius: var(--border-radius-none);
+    border-end-end-radius: var(--border-radius-none);
+}
+
+.field .controls.has-addons .control:not(:first-child):not(:last-child) * {
+    border-radius: var(--border-radius-none);
+}
+
+.field .controls.has-addons .control:last-child:not(:only-child) * {
+    border-start-start-radius: var(--border-radius-none);
+    border-end-start-radius: var(--border-radius-none);
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    00. 폼 유효성 UI
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+.is-invalid .input,
+.is-invalid .select select {
+    border-color: var(--color-danger);
+}
+
+.is-valid .input,
+.is-valid .select select {
+    border-color: var(--color-success);
+}
+
+.is-invalid.has-feedback-icon .input,
+.is-invalid.has-feedback-icon .select select,
+.is-valid.has-feedback-icon .input,
+.is-valid.has-feedback-icon .select select {
+    padding-right: var(--spacing-xl);
+}
+
+.is-invalid.has-feedback-icon .icon,
+.is-valid.has-feedback-icon .icon {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: var(--spacing-xs);
+    font-size: var(--icon-size-xs);
+}
+
+.invalid-feedback,
+.valid-feedback {
+    display: inline-block;
+    margin-top: var(--spacing-xs);
+    font-family: inherit;
+    font-weight: var(--font-weight-bold);
+    font-size: var(--text-size-xs);
+}
+
+.is-invalid.has-feedback-icon .icon,
+.invalid-feedback {
+    color: var(--color-danger);
+}
+
+.is-valid.has-feedback-icon .icon,
+.valid-feedback {
+    color: var(--color-success);
 }

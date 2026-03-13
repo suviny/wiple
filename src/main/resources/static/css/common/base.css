@@ -8,13 +8,9 @@
 
 
 
-
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- *  01_웹 폰트
+    01. 웹 폰트
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-/* ============================================================
-    || 본문 폰트
- ============================================================ */
 @font-face {
     font-family: 'Pretendard';
     font-style: normal;
@@ -35,11 +31,6 @@
     url('/fonts/Pretendard-SemiBold.woff') format('woff');
 }
 
-
-
-/* ============================================================
-    || 헤딩 폰트
- ============================================================ */
 @font-face {
     font-family: 'Paperlogy';
     font-style: normal;
@@ -52,17 +43,13 @@
 
 
 
-
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- *  02_사용자 지정 CSS 속성
+    02. 사용자 지정 CSS 속성
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 :root {
     /* ============================================================
         || 색상
      ============================================================ */
-    /* ---------------------------------------------
-        # 기본 색상
-     --------------------------------------------- */
     --palette-red-100: #FDE3E3;
     --palette-red-200: #FDCBCB;
     --palette-red-300: #FAA7A7;
@@ -124,7 +111,8 @@
     --palette-gray-900: #4F565F;
     --palette-gray-950: #303236;
 
-    --palette-brand-neutral-100: #F5F5F5;
+    --palette-brand-neutral-50: #F5F5F5;
+    --palette-brand-neutral-100: #F2F2F2;
     --palette-brand-neutral-200: #E3E3E3;
     --palette-brand-neutral-400: #8E918F;
     --palette-brand-neutral-500: #747775;
@@ -135,10 +123,6 @@
     --palette-white: #FFFFFF;
     --palette-black: #262626;
 
-
-    /* ---------------------------------------------
-        # 시맨틱 색상
-     --------------------------------------------- */
     --color-primary: var(--palette-royal-blue-500);
     --color-primary-light: var(--palette-royal-blue-100);
     --color-primary-subtle: var(--palette-royal-blue-200);
@@ -179,68 +163,43 @@
     /* ============================================================
         || 타이포그래피
      ============================================================ */
-    /* ---------------------------------------------
-        # 글꼴
-     --------------------------------------------- */
     --font-family-fallback: system-ui, -apple-system, sans-serif;
-
     --font-family-heading: 'Paperlogy', 'Pretendard', var(--font-family-fallback);
     --font-family-body: 'Pretendard', var(--font-family-fallback);
     --font-family-icon: 'fontello';
 
-
-    /* ---------------------------------------------
-       # 굵기
-    --------------------------------------------- */
     --font-weight-regular: 400 ;
     --font-weight-medium: 500;
     --font-weight-bold: 600;
     --font-weight-heavy: 800;
 
-
-    /* ---------------------------------------------
-        # 크기
-     --------------------------------------------- */
     --text-size-xs: 12px;
     --text-size-sm: 13px;
     --text-size-md: 16px;
     --text-size-lg: 20px;
     --text-size-xl: 24px;
 
-
-    /* ---------------------------------------------
-        # 자간
-     --------------------------------------------- */
     --letter-spacing-none: 0;
     --letter-spacing-heading: -0.05em;
     --letter-spacing-body: -0.02em;
     --letter-spacing-caption: 0.02em;
 
-
-    /* ---------------------------------------------
-        # 행간
-     --------------------------------------------- */
     --line-height-none: 0;
     --line-height-component: 1;
     --line-height-heading: 1.3;
     --line-height-body: 1.7;
 
 
-
     /* ============================================================
-        || 이미지
+        || 아이콘
      ============================================================ */
-    /* ---------------------------------------------
-        # 크기
-     --------------------------------------------- */
     --icon-size-offset: 2px;
 
     --icon-size-xs: calc(var(--text-size-xs) + var(--icon-size-offset));
-    --icon-size-sm: calc(var(--text-size-sm) + var(--icon-size-offset));
+    --icon-size-sm: calc(var(--text-size-sm) + var(--icon-size-offset) + 1px);
     --icon-size-md: calc(var(--text-size-md) + var(--icon-size-offset));
     --icon-size-lg: calc(var(--text-size-lg) + var(--icon-size-offset));
     --icon-size-xl: calc(var(--text-size-xl) + var(--icon-size-offset));
-
 
 
     /* ============================================================
@@ -263,21 +222,13 @@
     --spacing-xl: calc(var(--spacing-unit) * 8);
 
 
-
     /* ============================================================
         || 이미지
      ============================================================ */
-    /* ---------------------------------------------
-        # 이미지 크기 단위 값
-     --------------------------------------------- */
     --img-size-unit-avatar: 12px;
     --img-size-unit-thumbnail: 42px;
     --img-size-unit-card: 32px;
 
-
-    /* ---------------------------------------------
-        # 크기
-     --------------------------------------------- */
     --img-size-avatar-sm: calc(var(--img-size-unit-avatar) * 2);
     --img-size-avatar-md: calc(var(--img-size-unit-avatar) * 4);
     --img-size-avatar-lg: calc(var(--img-size-unit-avatar) * 6);
@@ -290,14 +241,10 @@
     --img-size-card-md: calc(var(--img-size-unit-card) * 4);
     --img-size-card-lg: calc(var(--img-size-unit-card) * 6);
 
-
-    /* ---------------------------------------------
-        # 이미지 비율
-     --------------------------------------------- */
+    /* 이미지 비율 */
     --aspect-ratio-avatar: 1 / 1;
     --aspect-ratio-thumbnail: 16 / 9;
     --aspect-ratio-card: 4 / 3;
-
 
 
     /* ============================================================
@@ -308,9 +255,9 @@
     --control-element-width-auto: auto;
 
     /* 높이 */
-    --control-element-height: calc(var(--text-size-md) + var(--spacing-md));
-    --control-elmeent-height-min: calc(var(--control-element-height) * 4);
-    --control-elmeent-height-max: calc(var(--control-element-height) * 8);
+    --control-element-height: calc(var(--text-size-md) + var(--spacing-lg));
+    --control-elment-height-min: calc(var(--control-element-height) * 4);
+    --control-elment-height-max: calc(var(--control-element-height) * 8);
 
     /* 내부 여백 */
     --control-element-padding: 12px;
@@ -320,28 +267,20 @@
     /* ============================================================
         || 테두리
      ============================================================ */
-    /* ---------------------------------------------
-        # 너비
-     --------------------------------------------- */
     --border-width-none: 0;
     --border-width-normal: 1px;
     --border-width-medium: 3px;
     --border-width-bold: 5px;
 
-
-    /* ---------------------------------------------
-        # 모서리
-     --------------------------------------------- */
     /* 둥근 정도 */
     --border-radius-none: 0;
-    --border-radius-sm: 2px;
-    --border-radius-md: 4px;
-    --border-radius-lg: 6px;
+    --border-radius-sm: 3px;
+    --border-radius-md: 5px;
+    --border-radius-lg: 7px;
 
     /* 형태 */
     --border-radius-pill: 9999px;
     --border-radius-circle: 50%;
-
 
 
     /* ============================================================
@@ -352,7 +291,6 @@
     --opacity-weak: 0.3;
     --opacity-strong: 0.7;
     --opacity-heavy: 0.8;
-
 
 
     /* ============================================================
@@ -368,17 +306,12 @@
     /* ============================================================
         || 애니메이션
      ============================================================ */
-    /* ---------------------------------------------
-        # 전환 시간
-     --------------------------------------------- */
+    /* 전환 시간 */
     --transition-duration-fast: 0.15s;
     --transition-duration-normal: 0.2s;
     --transition-duration-slow: 0.3s;
 
-
-    /* ---------------------------------------------
-        # 전환 효과
-     --------------------------------------------- */
+    /* 전환 효과 */
     --transition-ease: ease-in-out;
     --transition-ease-in: ease-in;
     --transition-ease-out: ease-out;
@@ -386,9 +319,8 @@
 
 
 
-
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- *  02_초기화 코드
+    03. 초기화 코드
  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 *,
 *::before,
@@ -516,6 +448,10 @@ button {
 
 label {
     display: inline-block;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 select::-ms-expand {

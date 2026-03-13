@@ -6,15 +6,13 @@
 
 <head>
     <title>로그인</title>
-    <th:block layout:fragment="page-style">
-        <link rel="stylesheet" href="/css/pages/user/login.css">
-    </th:block>
+    <link rel="stylesheet" href="/css/pages/user/login.css">
 </head>
 <th:block layout:fragment="page-content">
     <div class="panels is-stacked">
         <section class="panel">
             <header class="panel-header">
-                <div class="has-img is-size-avatar-sm is-margin-auto">
+                <div class="has-img is-size-avatar-md is-margin-auto">
                     <img src="/images/symbol-wiple.png" alt="로고">
                 </div>
             </header>
@@ -36,16 +34,16 @@
                             <a href="#" class="is-text-link is-underlined-hover">비밀번호를 잊으셨나요?</a>
                         </div>
                     </div>
-                    <div class="divider has-text">또는</div>
+                    <div class="divider has-text is-margin-bottom-lg">또는</div>
                     <div class="field is-stacked">
                         <div class="field">
-                            <button id="kakao-btn" class="buttons is-kakao">
+                            <button id="kakao-btn" class="button is-kakao">
                                 <img src="/images/social/ic-kakao.svg" alt="카카오" class="social-icon">
                                 <span>카카오 계정으로 로그인</span>
                             </button>
                         </div>
                         <div class="field">
-                            <button id="google-btn" class="buttons is-google-neutral">
+                            <button id="google-btn" class="button is-google-neutral">
                                 <img src="/images/social/ic-google.svg" alt="구글" class="social-icon">
                                 <span>구글 계정으로 로그인</span>
                             </button>

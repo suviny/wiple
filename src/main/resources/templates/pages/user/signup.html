@@ -6,19 +6,19 @@
 
 <head>
     <title>회원가입</title>
-    <th:block layout:fragment="page-style">
-        <link rel="stylesheet" href="/css/pages/user/signup.css">
-    </th:block>
+    <link rel="stylesheet" href="/css/pages/user/signup.css">
 </head>
 <th:block layout:fragment="page-content">
     <div class="panels is-stacked">
         <section class="panel">
             <header class="panel-header">
-                <h1 class="heading">회원가입</h1>
-                <div class="is-flex is-justify-content-between-space is-align-items-center">
-                    <h2 class="sub-heading">WIPLE의 회원이 되어보세요.</h2>
-                    <span class="caption is-text-helper">* 표시 는 필수 입력 항목입니다.</span>
+                <div class="has-img is-size-avatar-md is-margin-auto">
+                    <img src="/images/symbol-wiple.png" alt="로고">
                 </div>
+                <h1 class="heading is-margin-top-md">회원가입</h1>
+                <span class="caption is-text-help has-text-right is-margin-top-md">
+                    <i class="is-text-secondary is-text-sm">*</i> 표시는 필수 입력 항목입니다.
+                </span>
             </header>
             <div class="panel-body">
                 <form id="signup-form" class="content-form">
@@ -39,7 +39,7 @@
                             <div class="control">
                                 <input type="password" name="password" id="password" class="input" autocomplete="off">
                             </div>
-                            <span class="caption help">비밀번호 : 영문, 숫자, 특수 문자를 포함한 8~16자</span>
+                            <span class="caption help"><i class="icon-info-circled"></i> 영문 + 숫자 + 특수문자 조합의 8~16자</span>
                         </div>
                         <div class="field">
                             <label for="password-confirm" class="label is-required">비밀번호 확인</label>
@@ -57,7 +57,7 @@
                                     <button type="button" id="verify-nickname-btn" class="button is-primary">중복 확인</button>
                                 </div>
                             </div>
-                            <span class="caption help">닉네임 : 영문, 숫자를 포함한 3~20자</span>
+                            <span class="caption help"><i class="icon-info-circled"></i> 영문 + 숫자 조합의 3~20자</span>
                         </div>
                         <div class="field">
                             <label for="name" class="label is-required">이름</label>
