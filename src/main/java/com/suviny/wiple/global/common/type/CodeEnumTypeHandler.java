@@ -10,16 +10,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * {@link CodeEnum} 구현체 전용 타입핸들러
- * <p>
- * {@link CodeEnum}의 구현체인 열거형 내에 정의된 {@link String} 타입의 코드값을 데이터베이스 컬럼과의 매핑을 통해 저장하거나,
- * 데이터베이스로부터 읽어들인 코드값을 열거형으로 변환하는 작업을 수행하는 타입 핸들러
- * 
- * @param <E> {@link CodeEnum}을 구현한 {@link Enum} 타입
+ * {@link CodeEnum} 구현체를 대상으로 하는 타입 핸들러
+ * <p>{@link CodeEnum}의 구현체인 열거형 내에 정의된 문자열 타입의 코드값을 데이터베이스 컬럼과의 매핑을 통해 저장하거나,
+ * 데이터베이스로부터 읽어들인 코드값을 열거형으로 변환하는 작업을 수행한다.</p>
+ *
+ * @param <E>   {@link CodeEnum}을 구현한 {@link Enum} 타입
  */
 
 @MappedTypes(CodeEnum.class)
-public class CodeEnumTypeHandler <E extends Enum<E> & CodeEnum> extends BaseTypeHandler<E> {
+public class CodeEnumTypeHandler<E extends Enum<E> & CodeEnum> extends BaseTypeHandler<E> {
 
     private final Class<E> type;
 

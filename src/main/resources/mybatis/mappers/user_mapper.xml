@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suviny.wiple.domain.user.mapper.UserMapper">
+
+    <!-- 이메일의 존재 여부를 확인한다. -->
+    <select id="selectExistsByEmail" parameterType="String" resultType="Boolean">
+        <![CDATA[
+            SELECT EXISTS (
+                SELECT 1
+                FROM users
+                WHERE email = #{email}
+                    AND deleted_yn = 'N'
+                LIMIT 1
+            )
+        ]]>
+    </select>
+
+    <!-- 닉네임의 존재 여부를 확인한다. -->
+    <select id="selectExistsByNickname" parameterType="String" resultType="Boolean">
+        <![CDATA[
+            SELECT EXISTS (
+                SELECT 1
+                FROM users
+                WHERE nickname = #{nickname}
+                    AND deleted_yn = 'N'
+                LIMIT 1
+            )
+        ]]>
+    </select>
+
+    <!-- 회원가입 정보를 저장한다. -->
+    <insert id="insertUser" parameterType="SignUpRequest" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO users (
+            email, nickname, name, auth_type, is_enabled, is_locked, deleted_yn, updated_at
+        ) VALUES (
+            #{email}, #{nickname}, #{name}, #{authType}, #{isEnabled}, #{isLocked}, #{deletedYn}, NOW()
+        )
+    </insert>
+
+    <!-- 로컬 가입한 사용자의 비밀번호 정보를 저장한다. -->
+    <insert id="insertCredential">
+        INSERT INTO credentials (
+            user_id, password, updated_at
+        ) VALUES (
+            #{userId}, #{password}, NOW()
+        )
+    </insert>
+
+    <!-- 사용자의 권한 정보를 저장한다. -->
+    <insert id="insertUserRole" parameterType="UserRoleRequest">
+        INSERT INTO user_roles (
+            user_id, role, used_yn, updated_at
+        ) VALUES (
+            #{userId}, #{role}, #{usedYn}, NOW()
+        )
+    </insert>
+</mapper>
