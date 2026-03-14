@@ -46,7 +46,7 @@ public class SecurityConfig {
                 .expiredUrl("/"))
             /* HTTP 요청 인가 설정 구성 */
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers(SecurityConstants.ALLOWED_URLS).permitAll()
+                .requestMatchers(SecurityConstants.ANONYMOUS_ALLOWED_URLS).permitAll()
                 .anyRequest().authenticated());
         return http.build();
     }

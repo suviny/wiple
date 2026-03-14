@@ -7,13 +7,13 @@ server:
 spring:
   # SQL로깅을 위한 log4jdbc 드라이버 적용
   datasource:
-    url: jdbc:log4jdbc:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
+    url: jdbc:log4jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
     username: sa
   # SQL 초기 데이터 설정
   sql:
     init:
-      mode: EMBEDDED
+      mode: ALWAYS
       schema-locations: classpath:h2/schema.sql
       data-locations: classpath:h2/data.sql
   # H2 콘솔 접속 정보 설정

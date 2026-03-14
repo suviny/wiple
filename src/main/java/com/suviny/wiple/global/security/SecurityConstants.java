@@ -11,7 +11,7 @@ public final class SecurityConstants {
     /**
      * 별도의 인증 요구 없이 접근 가능한 요청 URL들을 정의한 상수 배열
      */
-    public static final String[] ALLOWED_URLS = {
+    public static final String[] ANONYMOUS_ALLOWED_URLS = {
             /* 웹 페이지 요청 URL */
             "/",
             "/sign-up",
@@ -19,7 +19,8 @@ public final class SecurityConstants {
             "/api/v1/login",
             "/api/v1/logout",
             "/api/v1/user",
-            "/api/v1/user/exists/**",
+            "/api/v1/user/email/exists",
+            "/api/v1/user/nickname/exists",
             /* 기타 URL */
             "/h2-console/**"
     };
